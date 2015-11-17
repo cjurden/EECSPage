@@ -100,7 +100,7 @@
 	function ConstructDisplayList($databse){
 		$result = QueryGetAllComments($databse);
 		while($row = mysql_fetch_array($result)){
-			if($row=['STATUS'] == 1){
+			if($row['STATUS'] == 1){
 				ConstructDisplayItem($row['AUTHOR'], $row['COMMENT']);
 			}
 		}
