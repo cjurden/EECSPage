@@ -7,37 +7,44 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 		<script type="text/javascript">
-			var updateCounter = 0;
-			function AjaxPost_Construct(constructionType, passwordVar = '', commentVar='', authorVar='', cid='', statusVar=''){
-				$.post("ajaxHomework10.php",{
-					constructionType: constructionType,
-					passowrd: passwordVar,
-					comment: commentVar,
-					author: authorVar,
-					commentid: cid,
-					status: statusVar},
-				function(data, status) {
-					if(constructionType == 'editlist'){
-						$('#divEditList').html(data);
-					}else if(constructionType == 'inputbox'){
-						$('#divInputBox').html(data);
-					}else if(constructionType == 'displaylist'){
-						$('#divDisplayList').html(data);
-					}else if(constructionType == 'editbox'){
-						$('#divEditBox').html(data);
-					}else if(constructionType == 'submitcomment'){
-						$('#divEditBox').html(data);
-					}else if(constructionType == 'update'){
-						updateCounter = updateCounter -1;
-						if(updateCounter == 0)
-						{
-							HideDisplayList();
-							ShowDisplayList();
-						}
-					}
-				});
-			}
-		</script>
+        var updateCounter = 0;
+        function AjaxPost_Construct(constructionType,passwordVar,commentVar,authorVar,cid,statusVar){
+            alert('here');
+            passwordVar = typeof passwordVar  !== 'undefined' ? passwordVar  : '';
+            commentVar = typeof commentVar !== 'undefined' ? commentVar : '';
+            authorVar = typeof authorVar !== 'undefined' ? authorVar : '';
+            cid = typeof cid !== 'undefined' ? cid : '';
+            statusVar = typeof statusVar !== 'undefined' ? statusVar : '';
+
+            $.post("ajaxHomework10.php",{
+                            constructiontype: constructionType,
+                            password: passwordVar,
+                            comment:commentVar,
+                            author: authorVar,
+                            commentid: cid,
+                            status: statusVar},
+                function(data, status){
+                    if(constructionType == 'editlist'){
+                        $('#divEditList').html(data);
+                    }else if(constructionType == 'inputbox'){
+                        $('#divInputBox').html(data);
+                    }else if(constructionType == 'displaylist'){
+                        $('#divDisplayList').html(data);
+                    }else if(constructionType == 'editbox'){
+                        $('#divEditBox').html(data);
+                    }else if(constructionType == 'submitcomment'){
+                        $('#divEditBox').html(data);
+                    }else if(constructionType == 'update'){
+                        updateCounter = updateCounter - 1;
+                        if(updateCounter == 0){
+                            HideDisplayList();
+                            ShowDisplayList();
+                        }
+                    }
+            });
+        }
+</script>
+
 
 		<!--						-->
 		<!--Jquery to modify html 	-->
@@ -152,7 +159,7 @@
 		#divCommentControl #divInnerComment #divEditList .divEditItem .divEditStatus .divRadio {}
 
 		#divCommentControl #divInnerComment #divDisplayList .divDisplayItem {width: 100%; float: left;}
-		#divCommentControl #divInnerComment #divDisplayList .divDisplayItem .pCommentText {width: 100%;}		
+		#divCommentControl #divInnerComment #divDisplayList .divDisplayItem .pCommentText {width: 100%;}
 		#divCommentControl #divInnerComment #divDisplayList .divDisplayItem .divAuthorName {float: right;}
 
 		.wordwrap {
@@ -178,6 +185,3 @@
 	</div>
 	</body>
 </html>
-
-
-
