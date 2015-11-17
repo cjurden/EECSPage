@@ -5,47 +5,51 @@
 	/*
 		PHP SETUP ROOT PATH
 	*/
-
+	//echo "setup root"
 	$mRootpath = "";
 	$mFilepath = explode('/', dirname(__DIR__));
 	foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f== "public_html"){break;}}
 	define('ROOT_PATH', $mRootpath);
 
 	/*PHP ERROR REPORTING*/
+	//echo "error reporting"
 	error_reporting(E_ALL);
 	ini_set("display_errors", 1);
 
 	/*PHP DATABASE CONNECTION*/
 	$database = @mysql_connect('mysql.eecs.ku.edu', $username, $password);
 	if(!$database) {
-		die('Could not connect: ', mysql_error());
+		die('Could not connect: ' . mysql_error());
 	}
 	if(!mysql_select_db($username, $database)) {
 		die('Could not select database: ' . mysql_error());
 	}
 
 	/*recieve all variables from ajax call*/
-	$constructionType = $_POST['constructionType'];
-	$password = $_POST['password'];
-	$comment = $_POST['comment'];
-	$author = $_POST['author'];
-	$commentID = $_POST['commentid'];
-	$status = $_POST['status'];
-
+	$constructionType 	= $_POST['constructionType'];
+	$password 					= $_POST['password'];
+	$comment 						= $_POST['comment'];
+	$author							= $_POST['author'];
+	$commentID 					= $_POST['commentid'];
+	$status 						= $_POST['status'];
+	//echo "variables received"
 	/*database query functions*/
 	function QueryGetAllComments($database){
 		$sqlQuery = 'SELECT * FROM USERCOMMENTS';
 		return mysql_query($sqlQuery, $database);
+	//	echo "comments"
 	}
 	function QuerySubmitNewComment($author, $comment, $database){
 		$sqlQuery = 'INSERT INTO USERCOMMENTS(AUTHOR, COMMENT) VALUES("'.mysql_real_escape_string($author).'","'.mysql_real_escape_string($comment).'")';
 		mysql_query($sqlQuery);
+	//	echo "submitted"
 	}
 	function QueryUpdateComment($commentID, $author, $comment, $status, $database){
 		$sqlQuery = 'UPDATE USERCOMMENTS SET AUTHOR="'.mysql_real_escape_string($author).'", COMMENT="'.mysql_real_escape_string($comment);
 		$sqlQuery .= '",STATUS='.$status.' WHERE COMMENTID =' .$commentID;
 		if(!mysql_query($sqlQuery)){
 			echo "ERROR!";}
+	//	echo "update"
 	}
 
 	/*functions to construct html objects*/
@@ -100,7 +104,7 @@
 	}
 
 	function ConstructDisplayItem($author, $comment){
-		echo '<div class="divDisplayItem">'
+		echo '<div class="divDisplayItem">';
 		echo '	<p class="pCommentText wordwrap">'.$comment.'</p>';
 		echo '	<div class="divAuthorName">- '.$author.'</div>';
 		echo '</div>';
