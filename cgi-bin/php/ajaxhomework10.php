@@ -1,10 +1,13 @@
 <?php
+
+	echo 'starting php now';
+	/*
 	$username = 'njurden';
 	$password = 'Password123!';
 
 	/*
 		PHP SETUP ROOT PATH
-	*/
+
 	//echo "setup root"
 	$mRootpath = "";
 	$mFilepath = explode('/', dirname(__DIR__));
@@ -16,7 +19,7 @@
 	error_reporting(E_ALL);
 	ini_set("display_errors", 1);
 
-	/*PHP DATABASE CONNECTION*/
+	/*PHP DATABASE CONNECTION
 	$database = @mysql_connect('mysql.eecs.ku.edu', $username, $password);
 	if(!$database) {
 		die('Could not connect: ' . mysql_error());
@@ -25,7 +28,7 @@
 		die('Could not select database: ' . mysql_error());
 	}
 
-	/*recieve all variables from ajax call*/
+	/*recieve all variables from ajax call
 	$constructionType 	= $_POST['constructionType'];
 	$password 					= $_POST['password'];
 	$comment 						= $_POST['comment'];
@@ -33,7 +36,7 @@
 	$commentID 					= $_POST['commentid'];
 	$status 						= $_POST['status'];
 	//echo "variables received"
-	/*database query functions*/
+	/*database query functions
 	function QueryGetAllComments($database){
 		$sqlQuery = "SELECT * FROM USERCOMMENTS";
 		return mysql_query($sqlQuery, $database);
@@ -52,7 +55,7 @@
 	//	echo "update"
 	}
 
-	/*functions to construct html objects*/
+	/*functions to construct html objects
 	function ConstructEditBox(){
 		echo '<table>';
 		echo '<tr>';
@@ -122,7 +125,7 @@
 		echo '</table>';
 	}
 
-	/*logic - always run*/
+	/*logic - always run
 	if($constructionType == 'editbox'){
 		ConstructEditBox();
 	}else if($constructionType == 'inputbox'){
@@ -137,6 +140,8 @@
 		QueryUpdateComment($commentID, $author, $comment, $status, $database);
 	}
 
-	/*close databse connection*/
+	/*close databse connection
 	mysql_close($database);
+	*/
+	echo 'stopping php now';
 ?>
