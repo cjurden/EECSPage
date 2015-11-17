@@ -29,7 +29,7 @@
 	}
 
 	//recieve all variables from ajax call
-	$constructionType 	= $_POST['constructionType'];
+	$constructionType 	= $_POST['constructiontype'];
 	$password 					= $_POST['password'];
 	$comment 						= $_POST['comment'];
 	$author							= $_POST['author'];
