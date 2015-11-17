@@ -35,7 +35,7 @@
 	//echo "variables received"
 	/*database query functions*/
 	function QueryGetAllComments($database){
-		$sqlQuery = 'SELECT * FROM USERCOMMENTS';
+		$sqlQuery = "SELECT * FROM USERCOMMENTS";
 		return mysql_query($sqlQuery, $database);
 	//	echo "comments"
 	}
@@ -97,7 +97,7 @@
 	function ConstructDisplayList($databse){
 		$result = QueryGetAllComments($databse);
 		while($row = mysql_fetch_array($result)){
-			if($row=['STAUS'] == 1){
+			if($row=['STATUS'] == 1){
 				ConstructDisplayItem($row['AUTHOR'], $row['COMMENT']);
 			}
 		}
