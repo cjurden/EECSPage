@@ -99,9 +99,9 @@
 		<!--						-->
 		<script type="text/javascript">
 		$(document).ready(function (){
-			ShowInputBox;
-			ShowEditBox;
-			ShowDisplayBox;
+			ShowInputBox();
+			ShowEditBox();
+			ShowDisplayBox();
 
 			$('body').on('click','#btnCancelEdit', function(e){
 				e.preventDefault();
