@@ -1,38 +1,50 @@
+<?php
+	$mRootpath = "";
+	$mFilepath = explode('/',dirname(__DIR__));
+	foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "eecspage"){break;}}
+	define('ROOT_PATH', $mRootpath);
+
+	include ROOT_PATH.'cgi-bin/php/base.php';
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="cgi-bin/styles/main.css">
+	<link rel="stylesheet" href="cgi-bin/css/main.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
-	<div id="center">
-		<h1>Cole Jurden</h1>
-		<h3>EECS 647 - Intro to Databases</h3>
-		<div id="basicdate"></div>
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="navbar-header">
+	    <a class="navbar-brand" href="#">INSERT LOGO</a>
+	  </div>
+	</nav>
+	<div class="jumbotron col-md-offset-1 col-md-10">
+      <div class="container header">
+        <h1>Welcome to TicketMiner</h1>
+        <div class="row spacer">
+        </div>
+				<div class="row col-md-offset-1">
+					<div class="col-md-3">
+						<button class="btn btn-primary btn-lg">Sign In</button>
+					</div>
+					<div class="col-md-3">
+						<button class="btn btn-primary btn-lg">Sign Up</button>
+					</div>
+				</div>
+    	</div>
 	</div>
-	<div>
-        	<h4>Pages</h4>
-                        <ol>
-                                <li><a href="homework11.html">Homework 11</a></li>
-                        </ol>
-   	 </div>
-   	 <!-- Latest compiled and minified JavaScript -->
-	<script src="cgi-bin/js/bootstrap.min.js"></script>
-	<script src="cgi-bin/js/angular.min.js"></script>
-	<!-- jquery -->
-	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </body>
-		<script language="JavaScript" type="text/javascript">
-			var now = new Date();
-			var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thu rsday','Friday','Saturday');
-			var months = new Array('January','February','March','April','May',' June','July','August','September','October','Novem ber','December');
-			var date = ((now.getDate()<10) ? "0" : "")+ now.getDate();
-			var year = (now.getYear() < 1000) ? now.getYear() + 1900 : now.getYear();
-			today = days[now.getDay()] + ", " + months[now.getMonth()] + " " + date + ", " + year;
-			basicdate.innerHTML = today;
-		</script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="cgi-bin/js/bootstrap.min.js"></script>
+<script src="cgi-bin/js/angular.min.js"></script>
+<script src="cgi-bin/js/main.js"></script>
+<!-- jquery -->
+
 </html>

@@ -1,0 +1,30 @@
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {float:none;}
+
+/*===============================================================
+  this is for the vertically centered column in index.html
+*/
+html, body {
+  height: 100%;
+}
+
+.jumbotron {
+  margin-bottom: 0; /* Remove the default bottom margin of .jumbotron */
+  background-color: rgba(0,255,255, .25);
+  border-radius: 10px;
+  padding-top: -10%;
+}
+
+.spacer {
+  height: 4%;
+}
+
+/*work on spacing for the buttons underneath the welcome banner*/
+.container {
+  text-align: center;
+}
