@@ -29,7 +29,7 @@
     <div class="page-header col-sm-offset-1 col-sm-10">
       <h1>Sign Up For TicketMiner</h1>
     </div>
-    <div class="form-horizontal">
+    <form class="form-horizontal" action="dashboard.php" method="post">
       <div class="form-group">
         <label for="firstName" class="col-sm-2 control-label">FirstName</label>
         <div class="col-sm-9">
@@ -68,7 +68,7 @@
         </div>
       </div>-->
       <div class="row">
-        <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit' href="dashboard.php">
+        <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit'>
       </div>
       </div>
     </div>

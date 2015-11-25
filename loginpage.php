@@ -25,7 +25,7 @@
             <label for="pwd">Password:</label>
             <input type="password" class="form-control" id="pwd">
           </div>
-          <input type="submit" class="btn btn-default" href="dashboard.html">
+          <input type="submit" class="btn btn-default" href="dashboard.php">
         </form>
       </div>
     </div>

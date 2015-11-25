@@ -8,10 +8,6 @@ define('ROOT_PATH', $mRootpath);
 
 include ROOT_PATH.'cgi-bin/php/base.php';
 
-session_start();
-if(!isset($_SESSION['name'])){
-	$_SESSION['name'] = 'miniprojectadmin';
-}
 if(isset($_POST['signup'])){
 	$firstname  = mysql_real_escape_string($_POST['firstname']);
 	$lastname   = mysql_real_escape_string($_POST['lastname']);
