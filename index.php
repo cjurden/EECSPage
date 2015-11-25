@@ -32,10 +32,10 @@
         </div>
 				<div class="row col-md-offset-1">
 					<div class="col-md-3">
-						<a class="btn btn-primary btn-lg" href="loginpage.html">Sign In</a>
+						<a class="btn btn-primary btn-lg" href="loginpage.php">Sign In</a>
 					</div>
 					<div class="col-md-3">
-						<a class="btn btn-primary btn-lg" href="signup.html">Sign Up</a>
+						<a class="btn btn-primary btn-lg" href="signup.php">Sign Up</a>
 					</div>
 				</div>
     	</div>
