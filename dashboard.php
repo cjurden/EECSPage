@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $mRootpath = "";
 $mFilepath = explode('/',dirname(__DIR__));
@@ -17,6 +18,7 @@ if(isset($_POST['signup'])){
 	$username   = mysql_real_escape_string($_POST['username']);
 	$password   = mysql_real_escape_string($_POST['password']);
 	$email      = mysql_real_escape_string($_POST['email']);
+/*
 	//form validatin arrays
 	$action = array();
 	$action['result'] = null;
@@ -47,24 +49,21 @@ if(isset($_POST['signup'])){
 	if($action['result'] != 'error'){
 		//this is where we can add encryption $password = md5($password)
 	}
+*/
 
-
-	$add = mysql_query("INSERT INTO USERS VALUES('$firstname', '$lastname', '$username', '$password', '$email')");
+	$add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$email."', '".$password."')");
 	mysql_close($database);
 	if($add){
-		session_start();
 		$_SESSION['username'] = $username;
 		$_SESSION['password'] = $password;
 	}
 	else {
-		$action['result'] = 'error';
-		array_push($text, 'user could not be added to database. error: ' . mysql_error());
-		$action['text'] = $text;
-		echo "<script type='text/javascript'> alert (". $text[0] ."); </script>";
+		var_dump($text);
 	}
 	//need to show errors at some point....
 }
 
+/*
 $mIsValidUser = false;
 if(!empty($_POST)){
 
@@ -85,6 +84,7 @@ if(!empty($_POST)){
 	}
 }
 
+
 //session_start(); <--- You need this if the session has not yet been started
 $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
 // Check to see if the query fails
@@ -97,8 +97,9 @@ if($result && mysql_numrows($result) == 0){
 	// If there are no rows with this username and password combination then redirect the user
 	header( 'Location: index.php' );
 }
-if($_POST['row'] == null || $_POST['section'] == null || $_POST['seat'] == null){
 
+if($_POST['row'] == null || $_POST['section'] == null || $_POST['seat'] == null){
+	//do nothing
 }else{
   $ticket = "SELECT SID FROM RSEAT WHERE ROW = '".$_POST['row']."' AND SECTION = '".$_POST['section']."' AND SEATNO = '".$_POST['seat']."')";
   $insertTicket = "INSERT INTO TICKET (SID) VALUES ('".$ticket."')"; //insert query to get post variables from add ticket and activate the ticket
@@ -108,19 +109,25 @@ if($_POST['row'] == null || $_POST['section'] == null || $_POST['seat'] == null)
   mysql_query($activateSeat, $database);
 }
 
+
+//is there a better way to determine WHICH page the user is coming from?
 if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null || $_POST['venue'] == null){
-
+	//do something
 }else{
-  $event = "INSERT INTO EVENT (NAME, TYPE, DATE, VID) VALUES ('".$_POST['name']."', '".."', '".."')"; //query venue database for VID
+	$VIDquer = "SELECT VID FROM VENUE WHERE NAME = '".$_POST['venue']."'";
+	$vid = mysql_query($VIDquer, $database);
+  $event = "INSERT INTO EVENT (NAME, TYPE, DATE, VID) VALUES ('".$_POST['name']."', '".$_POST['type']."', '".$_POST['date']."', '".$_POST['venue']."')";
 }
-function populateEvent(){
-$sql = "SELECT * FROM EVENTS WHERE ";
-$result = mysql_query($sql,$database);
-var_dump($result);
+*/
 
-while($row = mysql_fetch_array($result)){
-	echo "<option>".$row['NAME']."</option>";
-}
+function populateEvent(){
+	$sql = "SELECT * FROM EVENTS WHERE ";
+	$result = mysql_query($sql,$database);
+	var_dump($result);
+
+	while($row = mysql_fetch_array($result)){
+		echo "<option>".$row['NAME']."</option>";
+	}
 }
 ?>
 
@@ -149,7 +156,7 @@ while($row = mysql_fetch_array($result)){
             Events
           </option>
           <?php
-            populateEvent()
+            //populateEvent()
           ?>
         </select>
         <button class="btn btn-primary">Add Ticket</button>

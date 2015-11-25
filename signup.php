@@ -7,59 +7,6 @@
 	include ROOT_PATH.'cgi-bin/php/base.php';
   var_dump($_POST);
   /*
-  if(isset($_POST['signup'])){
-    $firstname  = mysql_real_escape_string($_POST['firstname']);
-    $lastname   = mysql_real_escape_string($_POST['lastname']);
-		$username   = mysql_real_escape_string($_POST['username']);
-    $password   = mysql_real_escape_string($_POST['password']);
-    $email      = mysql_real_escape_string($_POST['email']);
-    //form validatin arrays
-    $action = array();
-    $action['result'] = null;
-
-    $text = array();
-
-    //make sure user fills out all forms, probably where form validation can go
-    if(empty($username)){
-      $action['result']= 'error';
-      array_push($text, 'please enter a username');
-      }
-    if(empty($password)){
-      $action['result']= 'error';
-      array_push($text, 'please enter a password');
-    }
-    if(empty($email)){
-      $action['result']= 'error';
-      array_push($text, 'please enter an email');
-    }
-    if(empty($firstname)){
-      $action['result']= 'error';
-      array_push($text, 'please enter a first name');
-    }
-    if(empty($lastname)){
-      $action['result']= 'error';
-      array_push($text, 'please enter a last name');
-    }
-    if($action['result'] != 'error'){
-      //this is where we can add encryption $password = md5($password)
-    }
-
-
-    $add = mysql_query("INSERT INTO USERS VALUES('$firstname', '$lastname', '$username', '$password', '$email')");
-    mysql_close($database);
-    if($add){
-      session_start();
-      $_SESSION['username'] = $username;
-      $_SESSION['password'] = $password;
-    }
-    else {
-      $action['result'] = 'error';
-      array_push($text, 'user could not be added to database. error: ' . mysql_error());
-      $action['text'] = $text;
-      echo "<script type='text/javascript'> alert (". $text[0] ."); </script>";
-    }
-    //need to show errors at some point....
-	}
   */
 ?>
 
