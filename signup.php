@@ -94,6 +94,12 @@
         </div>
       </div>
       <div class="form-group">
+        <label for="username" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="username" placeholder="Username">
+        </div>
+      </div>
+      <div class="form-group">
         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-9">
           <input type="email" class="form-control" id="inputEmail" placeholder="Email">
@@ -105,12 +111,13 @@
           <input type="password" class="form-control" id="password" placeholder="Password">
         </div>
       </div>
+			<!--
       <div class="form-group">
         <label for="password" class="col-sm-2 control-label">Confirm Password</label>
         <div class="col-sm-9">
           <input type="password" class="form-control" id="password" placeholder="Password">
         </div>
-      </div>
+      </div>-->
       <div class="row">
         <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit' href="dashboard.php">
       </div>
