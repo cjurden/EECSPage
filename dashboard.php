@@ -14,11 +14,11 @@ include ROOT_PATH.'/eecspage/base.php';
 
 
 if(isset($_POST['signup'])){
-	$firstname  = mysql_real_escape_string($_POST['firstName']);
-	$lastname   = mysql_real_escape_string($_POST['lastName']);
-	$username   = mysql_real_escape_string($_POST['username']);
-	$password   = mysql_real_escape_string($_POST['password']);
-	$email      = mysql_real_escape_string($_POST['email']);
+	$firstname  = ($_POST["firstName"]);
+	$lastname   = ($_POST["lastName"]);
+	$username   = ($_POST["username"]);
+	$password   = ($_POST["password"]);
+	$email      = ($_POST["email"]);
 /*
 	//form validatin arrays
 	$action = array();
@@ -57,6 +57,13 @@ if(isset($_POST['signup'])){
 	if($add){
 		$_SESSION['username'] = $username;
 		$_SESSION['password'] = $password;
+		echo "<p>inserted data</p>";
+		$variables = [$firstname,
+									$lastname,
+									$username,
+									$password,
+									$email];
+		var_dump($variables);
 	}
 	else {
 		var_dump($text);
