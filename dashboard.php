@@ -54,6 +54,7 @@ if(!empty($_POST)){
 
 	$add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$email."', '".$password."')");
 	mysql_close($database);
+	var_dump($add);
 	if($add){
 		$_SESSION['username'] = $username;
 		$_SESSION['password'] = $password;
