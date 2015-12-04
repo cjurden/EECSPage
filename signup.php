@@ -4,7 +4,7 @@
 	foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "eecspage"){break;}}
 	define('ROOT_PATH', $mRootpath);
 
-	include ROOT_PATH.'cgi-bin/php/base.php';
+	include ROOT_PATH.'base.php';
   var_dump($_POST);
   /*
   */

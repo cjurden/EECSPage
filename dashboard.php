@@ -6,7 +6,7 @@ $mFilepath = explode('/',dirname(__DIR__));
 foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "eecspage"){break;}}
 define('ROOT_PATH', $mRootpath);
 
-include ROOT_PATH.'cgi-bin/php/base.php';
+include ROOT_PATH.'base.php';
 
 if(isset($_POST['signup'])){
 	$firstname  = mysql_real_escape_string($_POST['firstname']);
@@ -114,7 +114,7 @@ if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null ||
 	$vid = mysql_query($VIDquer, $database);
   $event = "INSERT INTO EVENT (NAME, TYPE, DATE, VID) VALUES ('".$_POST['name']."', '".$_POST['type']."', '".$_POST['date']."', '".$_POST['venue']."')";
 }
-*/
+
 
 function populateEvent(){
 	$sql = "SELECT * FROM EVENTS WHERE ";
