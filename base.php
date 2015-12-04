@@ -37,6 +37,7 @@ if(!mysql_select_db($userName, $database)){
 /* ---------------------------------------------------------*/
 /* -- PHP "INCLUDE" STATEMENTS								*/
 /* -- ------------------------------------------------------*/
+/*
 $sql = "SELECT * FROM CRUISE";
 $result = mysql_query($sql,$database);
 var_dump($result);
@@ -56,8 +57,9 @@ function populateCruise(){
 		echo "<option>".$row['CRUISENUM']."</option>";
 	}
 }
-
+*/
 echo "<pre>";
 var_dump($_GET); //this is how we can verify admin - by getting variable passed in url
 echo "</pre>";
+
 ?>

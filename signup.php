@@ -7,8 +7,6 @@ foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";//if($f == "eecspage"){
 
 	include ROOT_PATH.'base.php';
   var_dump($_POST);
-  /*
-  */
 ?>
 
 <!DOCTYPE html>
