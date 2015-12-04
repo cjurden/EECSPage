@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+var_dump($_SERVER);
 $mRootpath = "";
 $mFilepath = explode('/',dirname(__DIR__));
 foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";//if($f == "eecspage"){break;}
@@ -98,9 +98,9 @@ if(!empty($_POST)){
 	}
 }
 
-
+//this may be only for the login page, not signup, must pass a variable that shows where you are originating from
 //session_start(); <--- You need this if the session has not yet been started
-$sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
+$sql = "SELECT * FROM USERS WHERE USERNAME='$_SESSION['username']' AND PASSWORD='$_SESSION['password']'";
 // Check to see if the query fails
 if(!mysql_query($sql,$database)){
 	echo "<p>Query Failed!</p>";
