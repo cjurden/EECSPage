@@ -1,5 +1,5 @@
 <?php
-var_dump($POST);
+var_dump($_POST);
 
 session_start();
 
