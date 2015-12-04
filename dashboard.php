@@ -59,7 +59,7 @@ if(isset($_POST['signup'])){
 	//need to show errors at some point....
 }
 
-/*
+
 $mIsValidUser = false;
 if(!empty($_POST)){
 
