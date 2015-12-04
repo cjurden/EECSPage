@@ -51,7 +51,7 @@ if(!empty($_POST)){
 */
 
 //thinking problem may be with databse connection
-	$add = mysql_query("INSERT INTO USERS () VALUES(?s, ?s, ?s, ?s, ?s)"//, ($firstname, $lastname, $username, $email, $password);
+	$add = mysql_query("INSERT INTO USERS(FIRSTNAME, LASTNAME, USERNAME, PASSWORD, EMAIL) VALUES('$firstname', '$lastname', '$username', '$email', '$password')");
 	mysql_close($database);
 	var_dump($add);
 	if($add){
