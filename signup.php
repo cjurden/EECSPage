@@ -32,38 +32,38 @@ foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";//if($f == "eecspage"){
       <div class="form-group">
         <label for="firstName" class="col-sm-2 control-label">FirstName</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="firstName" placeholder="First Name">
+          <input type="text" class="form-control" name="firstName" placeholder="First Name">
         </div>
       </div>
       <div class="form-group">
         <label for="lastName" class="col-sm-2 control-label">Last Name</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+          <input type="text" class="form-control" name="lastName" placeholder="Last Name">
         </div>
       </div>
       <div class="form-group">
         <label for="username" class="col-sm-2 control-label">Username</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="username" placeholder="Username">
+          <input type="text" class="form-control" name="username" placeholder="Username">
         </div>
       </div>
       <div class="form-group">
         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-9">
-          <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+          <input type="email" class="form-control" name="inputEmail" placeholder="Email">
         </div>
       </div>
       <div class="form-group">
         <label for="password" class="col-sm-2 control-label">Password</label>
         <div class="col-sm-9">
-          <input type="password" class="form-control" id="password" placeholder="Password">
+          <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
       </div>
 			<!--
       <div class="form-group">
         <label for="password" class="col-sm-2 control-label">Confirm Password</label>
         <div class="col-sm-9">
-          <input type="password" class="form-control" id="password" placeholder="Password">
+          <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
       </div>-->
       <div class="row">
