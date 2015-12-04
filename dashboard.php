@@ -12,8 +12,8 @@ include ROOT_PATH.'/eecspage/base.php';
 var_dump($POST);
 
 if(isset($_POST['signup'])){
-	$firstname  = mysql_real_escape_string($_POST['firstname']);
-	$lastname   = mysql_real_escape_string($_POST['lastname']);
+	$firstname  = mysql_real_escape_string($_POST['firstName']);
+	$lastname   = mysql_real_escape_string($_POST['lastName']);
 	$username   = mysql_real_escape_string($_POST['username']);
 	$password   = mysql_real_escape_string($_POST['password']);
 	$email      = mysql_real_escape_string($_POST['email']);
