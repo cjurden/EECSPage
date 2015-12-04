@@ -67,6 +67,12 @@ if(isset($_POST['signup'])){
 	}
 	else {
 		var_dump($text);
+		$variables = [$firstname,
+									$lastname,
+									$username,
+									$password,
+									$email];
+		var_dump($variables);
 	}
 	//need to show errors at some point....
 }
