@@ -13,7 +13,7 @@ include ROOT_PATH.'/eecspage/base.php';
 
 
 
-if(isset($_POST['signup'])){
+if(!empty($_POST)){
 	$firstname  = ($_POST["firstName"]);
 	$lastname   = ($_POST["lastName"]);
 	$username   = ($_POST["username"]);
