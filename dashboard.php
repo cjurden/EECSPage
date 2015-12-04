@@ -1,4 +1,6 @@
 <?php
+var_dump($POST);
+
 session_start();
 
 $mRootpath = "";
@@ -9,7 +11,7 @@ define('ROOT_PATH', $mRootpath);
 
 include ROOT_PATH.'/eecspage/base.php';
 
-var_dump($POST);
+
 
 if(isset($_POST['signup'])){
 	$firstname  = mysql_real_escape_string($_POST['firstName']);
