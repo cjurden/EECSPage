@@ -3,10 +3,13 @@ session_start();
 
 $mRootpath = "";
 $mFilepath = explode('/',dirname(__DIR__));
-foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "eecspage"){break;}}
+foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";//if($f == "eecspage"){break;}
+}
 define('ROOT_PATH', $mRootpath);
 
-include ROOT_PATH.'base.php';
+include ROOT_PATH.'/eecspage/base.php';
+
+var_dump($POST);
 
 if(isset($_POST['signup'])){
 	$firstname  = mysql_real_escape_string($_POST['firstname']);
