@@ -1,10 +1,11 @@
 <?php
 	$mRootpath = "";
 	$mFilepath = explode('/',dirname(__DIR__));
-	foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "eecspage"){break;}}
+	foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";//if($f == ""){break;}
+														}
 	define('ROOT_PATH', $mRootpath);
 
-	include ROOT_PATH.'cgi-bin/php/base.php';
+	include ROOT_PATH.'eecspage/base.php';
 ?>
 
 
