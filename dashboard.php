@@ -1,6 +1,4 @@
 <?php
-var_dump($_POST);
-
 session_start();
 
 $mRootpath = "";
@@ -52,7 +50,7 @@ if(!empty($_POST)){
 	}
 */
 
-	$add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$email."', '".$password."')");
+	$add = mysql_query("INSERT INTO USERS VALUES('$firstname', '$lastname', '$username', '$email', '$password')");
 	mysql_close($database);
 	var_dump($add);
 	if($add){
