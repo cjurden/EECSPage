@@ -18,7 +18,7 @@ if(!empty($_POST)){
 	$lastname   = ($_POST["lastName"]);
 	$username   = ($_POST["username"]);
 	$password   = ($_POST["password"]);
-	$email      = ($_POST["email"]);
+	$email      = ($_POST["inputEmail"]);
 /*
 	//form validatin arrays
 	$action = array();
