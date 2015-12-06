@@ -155,7 +155,7 @@ function populateEvent(){
     <!--<link rel="stylesheet" href="cgi-bin/css/main.css">-->
   	<!-- Latest compiled and minified CSS -->
   	<link rel="stylesheet" href="cgi-bin/css/bootstrap.min.css">
-    <link rel="sylesheet" href = "cgi-bin/css/dash.css">
+    <!--<link rel="sylesheet" href = "cgi-bin/css/dash.css">-->
 
   </head>
   <body>
