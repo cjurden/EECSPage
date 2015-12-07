@@ -8,7 +8,7 @@ foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "njurden"){bre
 define('ROOT_PATH', $mRootpath);
 
 var_dump(ROOT_PATH);
-include ROOT_PATH.'/base.php';
+include ROOT_PATH.'public_html/base.php';
 
 
 
