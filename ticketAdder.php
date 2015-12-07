@@ -17,7 +17,7 @@
   }
 
   function populateSection(){
-    $sql = "SELECT * FROM EVENTS";
+    $sql = "SELECT * FROM EVENT";
     $result = mysql_query($sql,$database);
     var_dump($result);
 
