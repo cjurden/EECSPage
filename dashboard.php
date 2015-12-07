@@ -187,7 +187,6 @@ function populateEvent(){
 	<script src="cgi-bin/js/bootstrap.min.js"></script>
 	<script src="cgi-bin/js/d3.min.js" charset="utf-8"></script>
 	<script src='cgi-bin/js/graph.js'></script>
-  <script src="cgi-bin/js/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="cgi-bin/js/main.js"></script>
   <!-- jquery -->
