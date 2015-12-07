@@ -16,7 +16,7 @@
       </p>";
     }
     while($row = mysql_fetch_array($result)){
-      echo "<option>".$row['NAME']."</option>";
+      echo "<option>'".$row['NAME']."'</option>";
     }
   }
 
@@ -30,7 +30,7 @@
       </p>";
     }
     while($row = mysql_fetch_array($result)){
-      echo "<option>".$row['SECTION']."</option>";
+      echo "<option>'".$row['SECTION']."'.</option>";
     }
   }
 
@@ -44,7 +44,7 @@
       </p>";
     }
     while($row = mysql_fetch_array($result)){
-      echo "<option>".$row['ROW']."</option>";
+      echo "<option>'".$row['ROW']."'</option>";
     }
   }
 
@@ -59,7 +59,7 @@
     }
 
     while($row = mysql_fetch_array($result)){
-      echo "<option>".$row['SEATNO']."</option>";
+      echo "<option>'".$row['SEATNO']."'</option>";
     }
   }
 ?>
