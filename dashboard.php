@@ -186,14 +186,27 @@ function populateEvent(){
     <div class="container">
       <div class="row">
         <h3 class="col-md-offset-1">Select an Event: </h3>
-        <select class="col-md-4 col-md-offset-1">
-          <option disabled selected>
-            Events
-          </option>
-          <?php
-            populateEvent();
-          ?>
-        </select>
+				<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Dropdown
+				    <span class="caret"></span>
+				  </button>
+				  <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				    <li><a href="#">Action</a></li>
+				    <li><a href="#">Another action</a></li>
+				    <li><a href="#">Something else here</a></li>
+				    <li role="separator" class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
+				  </ul>-->
+					<select class="dropdown-menu">
+	          <option disabled selected>
+	            Events
+	          </option>
+	          <?php
+	            populateEvent();
+	          ?>
+	        </select>
+				</div>
         <button class="btn btn-primary">Add Ticket</button>
       </div>
     </div>
