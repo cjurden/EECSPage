@@ -91,7 +91,7 @@ else{
 
 
 $mIsValidUser = false;
-if(!empty($_POST)){
+if($_POST["username"]!= null && $_POST["password"]!= null){
 
 	//If there is a unsername varible in the post array then put it into the session
 	//array.
@@ -214,32 +214,32 @@ function populateAdmin() {
 					if($_SESSION['admin'] == true){
 						echo "<button class='btn btn-primary'><a href='eventAdder.php' style='text-decoration: none;''>Add Event</a></button>";
 						echo "<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>";
-					}
-				?>
-			</div>
-				<div class="container" id="adminMenu">
-					<div class="row">
-						<div class="col-md-3">
-	            <div class="well" id="well2" style="overflow: auto;">
-	                <select class="form-control">
-										<option disabled selected>
-					            Users
-					          </option>
-					          <?php
-					            populateAdmin();
-					          ?>
-									</select>
-	            </div>
-					</div>
-        </div>
-				</div>
-				<script>
-				$(document).ready(function() {
-						 $('#adminEdit').click(function() {
-									$('#adminMenu').toggle("slide");
-						 });
-				 });
-				</script>
+						echo "</div>
+										<div class='container' id='adminMenu'>
+											<div class='row'>
+												<div class='col-md-3'>
+							            <div class='well' id='well2' style='overflow: auto;'>
+							                <select class='form-control'>
+																<option disabled selected>
+											            Users
+											          </option>
+											          <?php
+											            populateAdmin();
+											          ?>
+															</select>
+							            </div>
+											</div>
+						        </div>
+										</div>
+									<!--	<script>
+										$(document).ready(function() {
+												 $('#adminEdit').click(function() {
+															$('#adminMenu').toggle('slide');
+												 });
+										 });
+									 </script>-->";
+		 			}
+			 ?>
       </div>
     </div>
   </body>
