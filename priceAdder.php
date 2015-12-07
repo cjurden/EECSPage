@@ -34,25 +34,27 @@
         <a class="navbar-brand" href="index.html">INSERT LOGO</a>
       </div>
     </nav>
-    <form class="form-horizontal" action="dashboard.php" method="post">
-      <div class="form-group">
-        <label for="events">Select an Event:</label>
-        <select class="form-control" name="event">
-          <option disabled>
-            Tickets
-          </option>
-          <?php
-            populateTicket();
-          ?>
-        </select>
-      <div class="form-group"
-          <span class="btn btn-default btn-file">
-            Browse <input type="file">
-          </span>
-      </div>
-      </div>
-      <div class="form-group">
-        <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit'>
+    <div class="container">
+      <form class="form-horizontal" action="dashboard.php" method="post">
+        <div class="form-group">
+          <label for="events">Select an Event:</label>
+          <select class="form-control" name="event">
+            <option disabled>
+              Tickets
+            </option>
+            <?php
+              populateTicket();
+            ?>
+          </select>
+        <div class="form-group"
+            <span class="btn btn-default btn-file">
+              Browse <input type="file" name="file">
+            </span>
+        </div>
+        </div>
+        <div class="form-group">
+          <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit'>
+        </div>
       </div>
     </div>
   </body>
