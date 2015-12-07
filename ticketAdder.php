@@ -15,6 +15,36 @@
       echo "<option>".$row['NAME']."</option>";
     }
   }
+
+  function populateSection(){
+    $sql = "SELECT * FROM EVENTS";
+    $result = mysql_query($sql,$database);
+    var_dump($result);
+
+    while($row = mysql_fetch_array($result)){
+      echo "<option>".$row['NAME']."</option>";
+    }
+  }
+
+  function populateRow(){
+    $sql = "SELECT * FROM EVENTS";
+    $result = mysql_query($sql,$database);
+    var_dump($result);
+
+    while($row = mysql_fetch_array($result)){
+      echo "<option>".$row['NAME']."</option>";
+    }
+  }
+
+  function populateSeat(){
+    $sql = "SELECT * FROM EVENTS";
+    $result = mysql_query($sql,$database);
+    var_dump($result);
+
+    while($row = mysql_fetch_array($result)){
+      echo "<option>".$row['NAME']."</option>";
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +71,7 @@
             Events
           </option>
           <?php
-            populateEvent()
+            populateEvent();
           ?>
         </select>
       </div>

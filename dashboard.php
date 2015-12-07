@@ -206,7 +206,7 @@ function populateAdmin() {
 	          ?>
 	        </select>
 			<div class="row">
-				<button class="btn btn-primary"><a href="ticketAdder.php"style="text-decoration: none;">Add Ticket</a></button>
+				<button class="btn btn-primary"><a href="ticketAdder.php" style="text-decoration: none;">Add Ticket</a></button>
 				<button class="btn btn-primary"><a style="text-decoration: none;">Event Data</a></button>
 				<?php
 					if($_SESSION['admin'] == true){
