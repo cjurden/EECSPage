@@ -121,10 +121,16 @@ if($result && mysql_num_rows($result) == 0){
 	// If there are no rows with this username and password combination then redirect the user
 	header( 'Location: index.php' );
 }
-var_dump(mysql_result($result, 0, "ADMIN"));
-/*if($result){
-	if()
-}*/
+
+if($result){
+	if(mysql_result($result, 0, "ADMIN")=="1")
+	{
+		$_SESSION['admin'] = true;
+	}
+	else{
+		$_SESSION['admin'] = false;
+	}
+}
 
 if($_POST["row"] == null || $_POST["section"] == null || $_POST["seat"] == null){
 	echo "<p>Not coming from seat adder!</p>";
@@ -167,7 +173,7 @@ function populateEvent(){
     <title>Login</title>
     <!--<link rel="stylesheet" href="cgi-bin/css/main.css">-->
   	<!-- Latest compiled and minified CSS -->
-  	<link rel="stylesheet" href="cgi-bin/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!--<link rel="sylesheet" href = "cgi-bin/css/dash.css">-->
 
   </head>
@@ -193,7 +199,7 @@ function populateEvent(){
     </div>
   </body>
   <!-- Latest compiled and minified JavaScript -->
-	<script src="cgi-bin/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="cgi-bin/js/d3.min.js" charset="utf-8"></script>
 	<script src='cgi-bin/js/graph.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
