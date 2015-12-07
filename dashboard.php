@@ -208,11 +208,12 @@ function populateAdmin() {
 	          ?>
 	        </select>
 			<div class="row">
-				<button class="btn btn-primary"><a href="ticketAdder.php" style="text-decoration: none;">Add Ticket</a></button>
-				<button class="btn btn-primary"><a style="text-decoration: none;">Event Data</a></button>
+				<a class="btn btn-primary" href="ticketAdder.php" style="!text-decoration: none;">Add Ticket</a>
+				<button class="btn btn-primary"><a style="!text-decoration: none;">Event Data</a></button>
+				<a class="btn btn-primary" href="priceAdder.php"style="!text-decoration: none;">Add Price</a>
 				<?php
 					if($_SESSION['admin'] == true){
-						echo "<button class='btn btn-primary'><a href='eventAdder.php' style='text-decoration: none;''>Add Event</a></button>";
+						echo "<a class='btn btn-primary'href='eventAdder.php' style='text-decoration: none;''>Add Event</a>";
 						echo "<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>";
 						echo "</div>
 										<div class='container' id='adminMenu'>
