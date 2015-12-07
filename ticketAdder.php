@@ -7,16 +7,6 @@
   include ROOT_PATH.'/public_html/base.php';
 
   function populateEvent(){
-    $sql = "SELECT * FROM EVENTS";
-    $result = mysql_query($sql,$database);
-    var_dump($result);
-
-    while($row = mysql_fetch_array($result)){
-      echo "<option>".$row['NAME']."</option>";
-    }
-  }
-
-  function populateSection(){
     $sql = "SELECT * FROM EVENT";
     $result = mysql_query($sql,$database);
     var_dump($result);
@@ -26,23 +16,33 @@
     }
   }
 
-  function populateRow(){
-    $sql = "SELECT * FROM EVENTS";
+  function populateSection(){
+    $sql = "SELECT * FROM RSEAT";
     $result = mysql_query($sql,$database);
     var_dump($result);
 
     while($row = mysql_fetch_array($result)){
-      echo "<option>".$row['NAME']."</option>";
+      echo "<option>".$row['SECTION']."</option>";
+    }
+  }
+
+  function populateRow(){
+    $sql = "SELECT * FROM RSEAT";
+    $result = mysql_query($sql,$database);
+    var_dump($result);
+
+    while($row = mysql_fetch_array($result)){
+      echo "<option>".$row['ROW']."</option>";
     }
   }
 
   function populateSeat(){
-    $sql = "SELECT * FROM EVENTS";
+    $sql = "SELECT * FROM RSEAT";
     $result = mysql_query($sql,$database);
     var_dump($result);
 
     while($row = mysql_fetch_array($result)){
-      echo "<option>".$row['NAME']."</option>";
+      echo "<option>".$row['SEATNO']."</option>";
     }
   }
 ?>
