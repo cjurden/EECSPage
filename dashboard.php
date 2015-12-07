@@ -17,6 +17,7 @@ if(!empty($_POST)){
 	$username   = ($_POST["username"]);
 	$password   = ($_POST["password"]);
 	$email      = ($_POST["inputEmail"]);
+	$admin			= ($_POST["admin"]);
 /*
 	//form validatin arrays
 	$action = array();
@@ -51,7 +52,7 @@ if(!empty($_POST)){
 */
 
 //thinking problem may be with databse connection
-	$add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$password."', '".$email."')");
+  $add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$password."', '".$email."', '".$admin."')");
 	var_dump($add);
 	if($add){
 		$_SESSION['username'] = $username;
@@ -61,7 +62,8 @@ if(!empty($_POST)){
 									$lastname,
 									$username,
 									$password,
-									$email];
+									$email,
+									$admin];
 		var_dump($variables);
 	}
 	else {
@@ -73,7 +75,8 @@ if(!empty($_POST)){
 									$lastname,
 									$username,
 									$password,
-									$email];
+									$email,
+									$admin];
 		var_dump($variables);
 	}
 	//need to show errors at some point....
