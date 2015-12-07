@@ -9,6 +9,7 @@ define('ROOT_PATH', $mRootpath);
 
 include ROOT_PATH.'public_html/base.php';
 
+var_dump($_POST)
 
 
 if($_POST["firstName"] == null || $_POST["lastName"] == null || $_POST["username"] == null || $_POST["password"] == null || $_POST["inputEmail"] == null){
