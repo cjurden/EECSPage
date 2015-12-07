@@ -7,6 +7,7 @@ foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html")
 }
 define('ROOT_PATH', $mRootpath);
 
+var_dump(ROOT_PATH);
 include ROOT_PATH.'/base.php';
 
 
