@@ -118,10 +118,10 @@ if($result && mysql_numrows($result) == 0){
 	header( 'Location: index.php' );
 }
 
-if($_POST['row'] == null || $_POST['section'] == null || $_POST['seat'] == null){
-	//do nothing
+if($_POST["row"] == null || $_POST["section"] == null || $_POST["seat"] == null){
+	echo "<p>Not coming from seat adder!</p>";
 }else{
-  $ticket = "SELECT SID FROM RSEAT WHERE ROW = '".$_POST['row']."' AND SECTION = '".$_POST['section']."' AND SEATNO = '".$_POST['seat']."')";
+  $ticket = mysql_query("SELECT SID FROM RSEAT WHERE ROW = '".$_POST["row"]."' AND SECTION = '".$_POST["section"]."' AND SEATNO = '".$_POST["seat"]."')");
   $insertTicket = "INSERT INTO TICKET (SID) VALUES ('".$ticket."')"; //insert query to get post variables from add ticket and activate the ticket
   mysql_query($insertTicket, $database);
 
@@ -133,6 +133,7 @@ if($_POST['row'] == null || $_POST['section'] == null || $_POST['seat'] == null)
 //is there a better way to determine WHICH page the user is coming from?
 if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null || $_POST['venue'] == null){
 	//do something
+	echo "<p>not coming from event adder!</p>";
 }else{
 	$VIDquer = "SELECT VID FROM VENUE WHERE NAME = '".$_POST['venue']."'";
 	$vid = mysql_query($VIDquer, $database);
