@@ -18,7 +18,7 @@
   	// If there are no rows with this username and password combination then redirect the user
   	header( 'Location: index.php' );
   }
-  
+
   function populateEvent(){
     $sql = "SELECT * FROM EVENTS";
     $result = mysql_query($sql,$database);
