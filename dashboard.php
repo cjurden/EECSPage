@@ -9,7 +9,8 @@ define('ROOT_PATH', $mRootpath);
 
 include ROOT_PATH.'public_html/base.php';
 
-var_dump($_POST)
+var_dump($_POST);
+
 
 
 if($_POST["firstName"] == null || $_POST["lastName"] == null || $_POST["username"] == null || $_POST["password"] == null || $_POST["inputEmail"] == null){
@@ -155,6 +156,21 @@ if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null ||
 	$VIDquer = "SELECT VID FROM VENUE WHERE NAME = '".$_POST['venue']."'";
 	$vid = mysql_query($VIDquer, $database);
   $event = "INSERT INTO EVENT (NAME, TYPE, DATE, VID) VALUES ('".$_POST['name']."', '".$_POST['type']."', '".$_POST['date']."', '".$_POST['venue']."')";
+}
+
+if($_POST['ticket'] == null || $_POST['file'] == null) {
+	//do something
+	echo "<p>not coming from price adder!</p>";
+}else{
+	$TIDquer = "SELECT TID FROM TICKET WHERE NAME = '".$_POST['name']."'";
+	$tid = mysql_query($VIDquer, $database);
+	$file = fopen($_POST['file'], "r");
+	while(! feof($file))
+	{
+		$price = (fgetcsv($file));
+		$event = "INSERT INTO PRICE (TID, PRICE) VALUES ('".$tid."', '".$price[0]."')";
+		$result = mysql_query($event);
+	}
 }
 
 

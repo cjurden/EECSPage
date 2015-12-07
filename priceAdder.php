@@ -38,7 +38,7 @@
       <form class="form-horizontal" action="dashboard.php" method="post">
         <div class="form-group">
           <label for="events">Select an Event:</label>
-          <select class="form-control" name="event">
+          <select class="form-control" name="ticket">
             <option disabled>
               Tickets
             </option>
