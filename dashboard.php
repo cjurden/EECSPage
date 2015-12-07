@@ -121,7 +121,7 @@ if($result && mysql_num_rows($result) == 0){
 	// If there are no rows with this username and password combination then redirect the user
 	header( 'Location: index.php' );
 }
-var_dump($result);
+var_dump(mysql_result($result, 0, "ADMIN"));
 /*if($result){
 	if()
 }*/
