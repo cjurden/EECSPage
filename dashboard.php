@@ -17,7 +17,12 @@ if(!empty($_POST)){
 	$username   = ($_POST["username"]);
 	$password   = ($_POST["password"]);
 	$email      = ($_POST["inputEmail"]);
-	$admin			= ($_POST["admin"]);
+	if($_POST["admin"] == "on"){
+		$admin = 1;
+	}
+	else{
+		$admin = 0;
+	}
 /*
 	//form validatin arrays
 	$action = array();
