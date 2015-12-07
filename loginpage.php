@@ -28,16 +28,16 @@
     </nav>
     <div class='jumbotron'>
       <div class="container">
-        <form role="form">
+        <form class="form-horizontal" action="dashboard.php" method="post">
           <div class="form-group">
             <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email">
+            <input type="email" class="form-control" name="email">
           </div>
           <div class="form-group">
             <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
+            <input type="password" class="form-control" name="password">
           </div>
-          <input type="submit" class="btn btn-default" href="dashboard.php">
+          <input type="submit" class="btn btn-default">
         </form>
       </div>
     </div>
