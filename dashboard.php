@@ -18,10 +18,10 @@ if(!empty($_POST)){
 	$password   = ($_POST["password"]);
 	$email      = ($_POST["inputEmail"]);
 	if($_POST["admin"] == "on"){
-		$admin = 1;
+		$admin = true;
 	}
 	else{
-		$admin = 0;
+		$admin = false;
 	}
 /*
 	//form validatin arrays
