@@ -72,7 +72,7 @@ foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html")
         if(mysql_num_rows($admin) == 0){
           echo "<div class='checkbox'>
                   <label>
-                    <input type='checkbox'> Admin
+                    <input type='checkbox' name='admin'> Admin
                   </label>
                 </div>";
         }
