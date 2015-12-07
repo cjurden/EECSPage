@@ -198,7 +198,7 @@ function populateEvent(){
 				    <li role="separator" class="divider"></li>
 				    <li><a href="#">Separated link</a></li>
 				  </ul>-->
-					<select class="dropdown-menu">
+					<select class="dropdown-menu" aria-labelledby="dropdownMenu1">
 	          <option disabled selected>
 	            Events
 	          </option>
@@ -207,7 +207,7 @@ function populateEvent(){
 	          ?>
 	        </select>
 				</div>
-        <button class="btn btn-primary">Add Ticket</button>
+        <button class="btn btn-primary col-md-offset-3">Add Ticket</button>
       </div>
     </div>
   </body>
