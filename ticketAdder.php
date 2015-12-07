@@ -10,7 +10,11 @@
     $sql = "SELECT * FROM EVENT";
     $result = mysql_query($sql,$database);
     var_dump($result);
-
+    if(!$result){
+      echo "<p>
+      failed to populate events
+      </p>";
+    }
     while($row = mysql_fetch_array($result)){
       echo "<option>".$row['NAME']."</option>";
     }
@@ -18,9 +22,13 @@
 
   function populateSection(){
     $sql = "SELECT * FROM RSEAT";
-    $result = mysql_query($sql,$database);
+    $result = mysql_query($sql);
     var_dump($result);
-
+    if(!$result){
+      echo "<p>
+      failed to populate sections
+      </p>";
+    }
     while($row = mysql_fetch_array($result)){
       echo "<option>".$row['SECTION']."</option>";
     }
@@ -30,7 +38,11 @@
     $sql = "SELECT * FROM RSEAT";
     $result = mysql_query($sql,$database);
     var_dump($result);
-
+    if(!$result){
+      echo "<p>
+      failed to populate row
+      </p>";
+    }
     while($row = mysql_fetch_array($result)){
       echo "<option>".$row['ROW']."</option>";
     }
@@ -40,6 +52,11 @@
     $sql = "SELECT * FROM RSEAT";
     $result = mysql_query($sql,$database);
     var_dump($result);
+    if(!$result){
+      echo "<p>
+      failed to populate seat
+      </p>";
+    }
 
     while($row = mysql_fetch_array($result)){
       echo "<option>".$row['SEATNO']."</option>";

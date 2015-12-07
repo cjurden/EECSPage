@@ -153,7 +153,7 @@ if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null ||
 	//do something
 	echo "<p>not coming from event adder!</p>";
 }else{
-	$VIDquer = "SELECT VID FROM VENUE WHERE NAME = '".$_POST['venue']."'GROUP BY VID";
+	$VIDquer = "SELECT VID FROM VENUE WHERE NAME = ".$_POST['venue']." GROUP BY VID";
 	$vid = mysql_query($VIDquer, $database);
   $event = "INSERT INTO EVENT (NAME, TYPE, DATE, VID) VALUES ('".$_POST['name']."', '".$_POST['type']."', '".$_POST['date']."', '".$vid."')";
 	$result = mysql_query($event);
