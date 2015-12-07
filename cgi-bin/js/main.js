@@ -8,6 +8,15 @@
    #
    ##################################################################### */
 
+   $(document).ready(function() {
+       $('#adminEdit').click(function() {
+            $('#adminMenu').toggle("slide");
+       });
+   });
+
+
+
+
 $(function() {
 
     var $formLogin = $('#login-form');

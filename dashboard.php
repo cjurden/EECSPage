@@ -156,12 +156,21 @@ if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null ||
 
 
 function populateEvent(){
-	$sql = "SELECT * FROM EVENTS WHERE ";
+	$sql = "SELECT * FROM EVENTS";
 	$result = mysql_query($sql,$database);
 	var_dump($result);
 
 	while($row = mysql_fetch_array($result)){
 		echo "<option>".$row['NAME']."</option>";
+	}
+}
+
+function populateAdmin() {
+	$quer = "SELECT * FROM USERS WHERE ADMIN = 1";
+	$res = mysql_query($quer);
+
+	while($row = mysql_fetch_array($result)){
+		echo "<option>".$row['FIRSTNAME']." ".$row['LASTNAME']."</option>";
 	}
 }
 ?>
@@ -197,7 +206,29 @@ function populateEvent(){
 			<div class="row">
 				<button class="btn btn-primary col-md-offset-3">Add Ticket</button>
 				<button class="btn btn-primary">Event Data</button>
+				<?php
+					if($_SESSION['admin'] == true){
+						echo "<button class='btn btn-primary'>Add Event</button>";
+						echo "<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>";
+					}
+				?>
 			</div>
+				<div class="container" id="adminMenu">
+					<div class="row">
+						<div class="col-md-3">
+	            <div class="well" id="well2" style="overflow: auto;">
+	                <select class="form-control">
+										<option disabled selected>
+					            Events
+					          </option>
+					          <?php
+					            populateAdmin();
+					          ?>
+									</select>
+	            </div>
+					</div>
+        </div>
+				</div>
       </div>
     </div>
   </body>

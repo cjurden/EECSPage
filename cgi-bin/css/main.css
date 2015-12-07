@@ -34,6 +34,13 @@ html, body {
   color: white;
 }
 
+/*code for list group of edit admins on dashboard page*/
+#well2 {
+  height: 15%;
+  overflow: auto;
+}
+
+
 /* #####################################################################
    #
    #   Project       : Modal Login with jQuery Effects
