@@ -170,7 +170,9 @@ function populateAdmin() {
 	$res = mysql_query($quer);
 
 	while($row = mysql_fetch_array($result)){
-		echo "<option>".$row['FIRSTNAME']." ".$row['LASTNAME']."</option>";
+		if($row['ADMIN'] == 0){
+			echo "<option>".$row['FIRSTNAME']." ".$row['LASTNAME']." ".$row['ADMIN']."</option>";
+		}
 	}
 }
 ?>
@@ -183,7 +185,7 @@ function populateAdmin() {
     <!--<link rel="stylesheet" href="cgi-bin/css/main.css">-->
   	<!-- Latest compiled and minified CSS -->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!--<link rel="sylesheet" href = "cgi-bin/css/dash.css">-->
+    <link rel="sylesheet" href = "cgi-bin/css/main.css">
 
   </head>
   <body>
@@ -219,7 +221,7 @@ function populateAdmin() {
 	            <div class="well" id="well2" style="overflow: auto;">
 	                <select class="form-control">
 										<option disabled selected>
-					            Events
+					            Users
 					          </option>
 					          <?php
 					            populateAdmin();
@@ -229,14 +231,21 @@ function populateAdmin() {
 					</div>
         </div>
 				</div>
+				<script>
+				$(document).ready(function() {
+						 $('#adminEdit').click(function() {
+									$('#adminMenu').toggle("slide");
+						 });
+				 });
+				</script>
       </div>
     </div>
   </body>
   <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="cgi-bin/js/main.js"></script>
 	<script src="cgi-bin/js/d3.min.js" charset="utf-8"></script>
 	<script src='cgi-bin/js/graph.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="cgi-bin/js/main.js"></script>
   <!-- jquery -->
 </html>
