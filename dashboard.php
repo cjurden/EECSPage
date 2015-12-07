@@ -114,7 +114,7 @@ if(!mysql_query($sql, $database)){
 $result = mysql_query($sql,$database);
 if($result && mysql_num_rows($result) == 0){
 	// If there are no rows with this username and password combination then redirect the user
-	header( 'Location: index.php' );
+	//header( 'Location: index.php' );
 }
 
 if($_POST["row"] == null || $_POST["section"] == null || $_POST["seat"] == null){
