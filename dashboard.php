@@ -52,7 +52,6 @@ if(!empty($_POST)){
 
 //thinking problem may be with databse connection
 	$add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$password."', '".$email."')");
-	mysql_close($database);
 	var_dump($add);
 	if($add){
 		$_SESSION['username'] = $username;
@@ -109,7 +108,7 @@ var_dump($Susername);
 var_dump($Spassword);
 $sql = "SELECT * FROM USERS WHERE USERNAME='".$Susername."' AND PASSWORD='".$Spassword."'";
 // Check to see if the query fails
-if(!mysql_query($sql,$database)){
+if(!mysql_query($sql, $database)){
 	echo "<p>Query Failed!</p>";
 }
 
