@@ -59,6 +59,25 @@ foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html")
           <input type="password" class="form-control" name="password" placeholder="Password">
         </div>
       </div>
+      <?php
+        $sql = "SELECT * FROM USERS WHERE ADMIN = 1";
+
+
+        if(!mysql_query($sql)){
+          echo "<p>
+            query failed!
+          </p>";
+        }
+        $admin = mysql_query($sql);
+        if(mysql_num_rows($admin) == 0){
+          echo "<div class='checkbox'>
+                  <label>
+                    <input type='checkbox'> Admin
+                  </label>
+                </div>";
+        }
+
+      ?>
 			<!--
       <div class="form-group">
         <label for="password" class="col-sm-2 control-label">Confirm Password</label>
