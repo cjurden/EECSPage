@@ -60,6 +60,7 @@
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
         <a class="navbar-brand" href="index.html">INSERT LOGO</a>
+        <a class="btn btn-primary" href="dashboard.php"style="!text-decoration: none;">Dashboard</a>
       </div>
     </nav>
     <div class="container">
@@ -100,6 +101,7 @@
           <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit'>
         </div>
     </div>
+    <a class="btn btn-primary" href="dashboard.php"style="!text-decoration: none;">Dashboard</a>
   </form>
   </body>
   <!-- Latest compiled and minified JavaScript -->
