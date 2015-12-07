@@ -1,11 +1,11 @@
 <?php
 	$mRootpath = "";
 	$mFilepath = explode('/',dirname(__DIR__));
-foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";//if($f == "eecspage"){break;}
+foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html"){break;}
 }
 	define('ROOT_PATH', $mRootpath);
 
-	include ROOT_PATH.'base.php';
+	include ROOT_PATH.'public_html/base.php';
   var_dump($_POST);
 ?>
 

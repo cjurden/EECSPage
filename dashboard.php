@@ -3,11 +3,10 @@ session_start();
 //var_dump($_SERVER['HTTP_REFERER']);
 $mRootpath = "";
 $mFilepath = explode('/',dirname(__DIR__));
-foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "njurden"){break;}
+foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html"){break;}
 }
 define('ROOT_PATH', $mRootpath);
 
-var_dump(ROOT_PATH);
 include ROOT_PATH.'public_html/base.php';
 
 
@@ -52,7 +51,7 @@ if(!empty($_POST)){
 */
 
 //thinking problem may be with databse connection
-	$add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$email."', '".$password."')");
+	$add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$password."', '".$email."')");
 	mysql_close($database);
 	var_dump($add);
 	if($add){
@@ -87,8 +86,8 @@ if(!empty($_POST)){
 
 	//If there is a unsername varible in the post array then put it into the session
 	//array.
-	if(isset($_POST['un'])){
-		$_SESSION['username'] = $_POST['un'];
+	if(isset($_POST["username"])){
+		$_SESSION["username"] = $_POST["username"];
 	}else{
 		$_SESSION['username'] = "";
 	}
@@ -106,7 +105,9 @@ if(!empty($_POST)){
 //session_start(); <--- You need this if the session has not yet been started
 $Susername = $_SESSION['username'];
 $Spassword = $_SESSION['password'];
-$sql = "SELECT * FROM USERS WHERE USERNAME='$Susername' AND PASSWORD='$Spassword'";
+var_dump($Susername);
+var_dump($Spassword);
+$sql = "SELECT * FROM USERS WHERE USERNAME='".$Susername."' AND PASSWORD='".$Spassword."'";
 // Check to see if the query fails
 if(!mysql_query($sql,$database)){
 	echo "<p>Query Failed!</p>";
