@@ -57,7 +57,7 @@ if(!empty($_POST)){
 */
 
 //thinking problem may be with databse connection
-  $add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$password."', '".$email."', '".$admin."')");
+  $add = mysql_query("INSERT INTO USERS VALUES('".$firstname."', '".$lastname."', '".$username."', '".$email."', '".$password."', '".$admin."')");
 	var_dump($add);
 	if($add){
 		$_SESSION['username'] = $username;
@@ -119,8 +119,12 @@ if(!mysql_query($sql, $database)){
 $result = mysql_query($sql,$database);
 if($result && mysql_num_rows($result) == 0){
 	// If there are no rows with this username and password combination then redirect the user
-	//header( 'Location: index.php' );
+	header( 'Location: index.php' );
 }
+var_dump($result);
+/*if($result){
+	if()
+}*/
 
 if($_POST["row"] == null || $_POST["section"] == null || $_POST["seat"] == null){
 	echo "<p>Not coming from seat adder!</p>";
