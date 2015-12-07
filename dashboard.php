@@ -194,7 +194,10 @@ function populateEvent(){
 	            populateEvent();
 	          ?>
 	        </select>
-        <button class="btn btn-primary col-md-offset-3">Add Ticket</button>
+			<div class="row">
+				<button class="btn btn-primary col-md-offset-3">Add Ticket</button>
+				<button class="btn btn-primary">Event Data</button>
+			</div>
       </div>
     </div>
   </body>
