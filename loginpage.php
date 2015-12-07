@@ -25,13 +25,16 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="index.html">INSERT LOGO</a>
       </div>
+      <div class="nav navbar-nav navbar-left">
+        <button class="btn btn-default">Log Out</button>
+      </div>
     </nav>
     <div class='jumbotron'>
       <div class="container">
         <form class="form-horizontal" action="dashboard.php" method="post">
           <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" name="email">
+            <label for="email">Username:</label>
+            <input type="text" class="form-control" name="username">
           </div>
           <div class="form-group">
             <label for="pwd">Password:</label>

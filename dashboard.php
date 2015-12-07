@@ -11,7 +11,9 @@ include ROOT_PATH.'public_html/base.php';
 
 
 
-if(!empty($_POST)){
+if($_POST["firstName"] == null || $_POST["lastName"] == null || $_POST["username"] == null || $_POST["password"] == null || $_POST["inputEmail"] == null){
+}
+else{
 	$firstname  = ($_POST["firstName"]);
 	$lastname   = ($_POST["lastName"]);
 	$username   = ($_POST["username"]);
