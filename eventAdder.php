@@ -14,7 +14,7 @@
   }
 
   $result = mysql_query($sql,$database);
-  if($result && mysql_numrows($result) == 0){
+  if($result && mysql_num_rows($result) == 0){
   	// If there are no rows with this username and password combination then redirect the user
   	header( 'Location: index.php' );
   }

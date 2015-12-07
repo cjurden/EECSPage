@@ -9,6 +9,22 @@
 
   include ROOT_PATH.'public_html/base.php';
 
+  $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
+  // Check to see if the query fails
+  if(!mysql_query($sql, $database)){
+  	echo "<p>Query Failed!</p>";
+  }
+
+  $result = mysql_query($sql,$database);
+  if($result && mysql_num_rows($result) == 0){
+  	// If there are no rows with this username and password combination then redirect the user
+  	header( 'Location: index.php' );
+  }
+  else if(mysql_num_rows($result))
+  {
+    header ('Location: dashboard.php');
+  }
+
 ?>
 <!DOCTYPE html>
 <html>
