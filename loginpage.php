@@ -20,10 +20,6 @@
   	// If there are no rows with this username and password combination then redirect the user
   	header( 'Location: login.php' );
   }
-  else if(mysql_num_rows($result))
-  {
-    header ('Location: dashboard.php');
-  }
 
 ?>
 <!DOCTYPE html>
