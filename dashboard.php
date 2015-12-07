@@ -156,6 +156,16 @@ if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null ||
 	$VIDquer = "SELECT VID FROM VENUE WHERE NAME = '".$_POST['venue']."'";
 	$vid = mysql_query($VIDquer, $database);
   $event = "INSERT INTO EVENT (NAME, TYPE, DATE, VID) VALUES ('".$_POST['name']."', '".$_POST['type']."', '".$_POST['date']."', '".$_POST['venue']."')";
+	$result = mysql_query($event);
+	if(!$result){
+		echo "<p>
+		unsuccessful insertion of event
+		</p>";
+	}else {
+		echo "<p>
+		inserted event!
+		</p>";
+	}
 }
 
 if($_POST['ticket'] == null || $_POST['file'] == null) {
