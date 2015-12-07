@@ -136,15 +136,26 @@ if($result){
 	}
 }
 
-if($_POST["row"] == null || $_POST["section"] == null || $_POST["seat"] == null){
+if($_POST["row"] == null || $_POST["section"] == null || $_POST["seat"] == null || $_POST["event"] == null){
 	echo "<p>Not coming from seat adder!</p>";
 }else{
-  $ticket = mysql_query("SELECT SID FROM RSEAT WHERE ROW = '".$_POST["row"]."' AND SECTION = '".$_POST["section"]."' AND SEATNO = '".$_POST["seat"]."')");
-  $insertTicket = "INSERT INTO TICKET (SID) VALUES ('".$ticket."')"; //insert query to get post variables from add ticket and activate the ticket
-  mysql_query($insertTicket, $database);
+  $sid = mysql_query("SELECT SID FROM RSEAT WHERE ROW = '".$_POST["row"]."' AND SECTION = '".$_POST["section"]."' AND SEATNO = '".$_POST["seat"]."' GROUP BY SID");
+	$eid = mysql_query("SELECT EID FROM EVENT WHERE NAME = '".$_POST['event']."' GROUP BY EID");
 
-  $activateSeat = "INSERT INTO SEAT (SID) VALUES('".$ticket."')";
-  mysql_query($activateSeat, $database);
+	$insertTicket = "INSERT INTO TICKET (EID, SID) VALUES ('".$eid."','".$sid."')"; //insert query to get post variables from add ticket and activate the ticket
+  $R1 = mysql_query($insertTicket, $database);
+	if(!$R1){
+		echo "<p>
+		 insert into ticket failed
+		</p>";
+	}
+  $activateSeat = "INSERT INTO SEAT (SID) VALUES('".$sid."')";
+  $R2 = mysql_query($activateSeat, $database);
+	if(!$R2){
+		echo "<p>
+		 insert into seat table failed
+		</p>";
+	}
 }
 
 

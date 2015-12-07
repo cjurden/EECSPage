@@ -15,6 +15,7 @@
       </p>";
     }
     while($row = mysql_fetch_array($result)){
+      var_dump($row);
       echo "<option>".$row['NAME']."</option>";
     }
   }
@@ -96,21 +97,21 @@
             <label for="events">Section:</label>
           <select class="form-control" name="section">
             <option disabled>Section</option>
-            <?php populateSection(); //need to design this function ?>
+            <?php populateSection(); ?>
           </select>
       </div>
       <div class="form-group">
           <label for="events">Row:</label>
           <select class="form-control" name="row">
             <option disabled>Row</option>
-            <?php populateRow(); //need to design this function ?>
+            <?php populateRow();?>
           </select>
       </div>
         <div class="form-group">
           <label for="events">Seat:</label>
           <select class="form-control" name="seat">
             <option disabled>Seat</option>
-            <?php populateSeat(); //need to design this function ?>
+            <?php populateSeat();?>
           </select>
         </div>
         <div class="form-group">
