@@ -33,7 +33,7 @@
       </div>
     </nav>
     <div class="container">
-    <div class="form-horizontal">
+    <form class="form-horizontal" action="dashboard.php" method="post">
       <div class="form-group">
         <label for="events">Select an Event:</label>
         <select class="form-control" name="event">
@@ -67,10 +67,10 @@
           </select>
         </div>
         <div class="form-group">
-          <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit' href="dashboard.html">
+          <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit'>
         </div>
     </div>
-  </div>
+  </form>
   </body>
   <!-- Latest compiled and minified JavaScript -->
   <script src="cgi-bin/js/angular.min.js"></script>

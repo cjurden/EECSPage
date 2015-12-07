@@ -46,7 +46,7 @@
       </div>
     </nav>
     <div class="container">
-    <div class="form-horizontal">
+    <form class="form-horizontal" action= "dashboard.php" method="post">
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="name" placeholder="Name" name="name">
@@ -69,7 +69,7 @@
         <div class="form-group">
           <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit' href="dashboard.html">
         </div>
-    </div>
+    </form>
   </div>
   </body>
   <!-- Latest compiled and minified JavaScript -->
