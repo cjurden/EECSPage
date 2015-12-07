@@ -9,14 +9,13 @@
   function populateEvent(){
     $sql = "SELECT * FROM EVENT";
     $result = mysql_query($sql,$database);
-    var_dump($result);
     if(!$result){
       echo "<p>
       failed to populate events
       </p>";
     }
     while($row = mysql_fetch_array($result)){
-      echo "<option>'".$row['NAME']."'</option>";
+      echo "<option>".$row['NAME']."</option>";
     }
   }
 
@@ -30,7 +29,7 @@
       </p>";
     }
     while($row = mysql_fetch_array($result)){
-      echo "<option>'".$row['SECTION']."'.</option>";
+      echo "<option>".$row['SECTION']."</option>";
     }
   }
 
