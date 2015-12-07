@@ -19,7 +19,7 @@
   	header( 'Location: index.php' );
   }
 
-  function populateEvent(){
+  function populateType(){
     $sql = "SELECT * FROM EVENTS";
     $result = mysql_query($sql,$database);
     var_dump($result);
@@ -57,10 +57,7 @@
       </div>
       <div class="form-group">
           <label for="events">Type:</label>
-          <select class="form-control" name="type">
-            <option disabled>Type</option>
-            <?php populateType(); //need to design this function ?>
-          </select>
+          <input type="text" class="form-control" id="type" placeholder="Type" name="type">
       </div>
         <div class="form-group">
           <label for="venue">Venue:</label>
