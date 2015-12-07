@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $mRootpath = "";
   $mFilepath = explode('/',dirname(__DIR__));
   foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html"){break;}}
@@ -6,6 +7,18 @@
 
   include ROOT_PATH.'/public_html/base.php';
 
+  $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
+  // Check to see if the query fails
+  if(!mysql_query($sql, $database)){
+  	echo "<p>Query Failed!</p>";
+  }
+
+  $result = mysql_query($sql,$database);
+  if($result && mysql_numrows($result) == 0){
+  	// If there are no rows with this username and password combination then redirect the user
+  	header( 'Location: index.php' );
+  }
+  
   function populateEvent(){
     $sql = "SELECT * FROM EVENTS";
     $result = mysql_query($sql,$database);

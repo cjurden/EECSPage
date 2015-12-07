@@ -102,11 +102,7 @@ if(!empty($_POST)){
 
 //this may be only for the login page, not signup, must pass a variable that shows where you are originating from
 //session_start(); <--- You need this if the session has not yet been started
-$Susername = $_SESSION['username'];
-$Spassword = $_SESSION['password'];
-var_dump($Susername);
-var_dump($Spassword);
-$sql = "SELECT * FROM USERS WHERE USERNAME='".$Susername."' AND PASSWORD='".$Spassword."'";
+$sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
 // Check to see if the query fails
 if(!mysql_query($sql, $database)){
 	echo "<p>Query Failed!</p>";
