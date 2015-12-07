@@ -47,9 +47,9 @@
             ?>
           </select>
         <div class="form-group"
-            <span class="btn btn-default btn-file">
+            <div class="btn btn-default btn-file">
               Browse <input type="file" name="file">
-            </span>
+            </div>
         </div>
         </div>
         <div class="form-group">
