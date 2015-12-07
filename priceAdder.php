@@ -45,6 +45,11 @@
             populateTicket();
           ?>
         </select>
+      <div class="form-group"
+          <span class="btn btn-default btn-file">
+            Browse <input type="file">
+          </span>
+      </div>
       </div>
       <div class="form-group">
         <input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit'>

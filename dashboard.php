@@ -209,7 +209,7 @@ function populateAdmin() {
 	        </select>
 			<div class="row">
 				<a class="btn btn-primary" href="ticketAdder.php" style="!text-decoration: none;">Add Ticket</a>
-				<button class="btn btn-primary"><a style="!text-decoration: none;">Event Data</a></button>
+				<button class="btn btn-primary" style="!text-decoration: none;">Event Data</button>
 				<a class="btn btn-primary" href="priceAdder.php"style="!text-decoration: none;">Add Price</a>
 				<?php
 					if($_SESSION['admin'] == true){
