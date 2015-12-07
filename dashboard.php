@@ -3,7 +3,7 @@ session_start();
 //var_dump($_SERVER['HTTP_REFERER']);
 $mRootpath = "";
 $mFilepath = explode('/',dirname(__DIR__));
-foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html"){break;}
+foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "njurden"){break;}
 }
 define('ROOT_PATH', $mRootpath);
 
