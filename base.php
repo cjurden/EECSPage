@@ -21,7 +21,6 @@ error_reporting(E_ALL);
 /* ---------------------------------------------------------*/
 /* -- PHP DATABASE CONNECTION 								*/
 /* -- ------------------------------------------------------*/
-include ROOT_PATH.'phpFiles/databaseAccessFunctions.php';
 
 // Open Database Connection
 $database = @mysql_connect('mysql.eecs.ku.edu', $userName, $password);

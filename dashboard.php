@@ -66,6 +66,9 @@ if(!empty($_POST)){
 		var_dump($variables);
 	}
 	else {
+		echo "<p>
+			failed to insert
+		</p>";
 		var_dump($text);
 		$variables = [$firstname,
 									$lastname,
