@@ -29,7 +29,8 @@
 			trying to populate admins
 		</p>";
 		while($row = mysql_fetch_array($res)){
-			if($row['ADMIN'] == false){
+			var_dump($row['ADMIN']);
+			if($row['ADMIN'] == 0){
 				echo "<option>".$row['USERNAME']."</option>";
 			}
 		}
@@ -45,6 +46,7 @@
   	<!-- Latest compiled and minified CSS -->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="sylesheet" href = "cgi-bin/css/main.css">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 		<style>
 			body {
 			  font: 10px sans-serif;
@@ -69,6 +71,7 @@
 		</style>
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default" role="navigation">
@@ -94,6 +97,16 @@
 			</div>
 		</div>
 			<br />
+			<script>
+				$(document).ready(function (){
+					$('#adminEdit').onClick(function (){
+						$('#adminEditMenu').toggle(slide);
+					});
+					$('#userDel').onClick(function (){
+						$('#DeleteMenu').toggle(slide);
+					});
+				});
+			</script>
 			<div class="container">
 				<div class="row">
 					<a class="btn btn-primary" href="ticketAdder.php" style="!text-decoration: none;">Add Ticket</a>
@@ -104,16 +117,6 @@
 											<button class='btn btn-primary' id='userDel'>Delete User</button>
 								</div>
 								<br />
-								<script>
-									$(document).ready(function (){
-										$('#adminEdit').onClick(function (){
-											$('#adminEditMenu').toggle(slide);
-										});
-										$('#userDel').onClick(function (){
-											$('#DeleteMenu').toggle(slide);
-										});
-									});
-								</script>
 							<div class='container' id='adminEditMenu'>
 								<div class='row'>
 								<div class='form-horizontal' method='post' action='_updateUser.php'>
