@@ -25,12 +25,12 @@
   //session_start(); <--- You need this if the session has not yet been started
   $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
   // Check to see if the query fails
-  if(!mysql_query($sql)){
+  $result = mysql_query($sql);
+  if(!$result){
     var_dump($_SESSION);
     echo "<p>Query Failed!</p>";
   }
 
-  $result = mysql_query($sql);
   if($result && mysql_num_rows($result) == 0){
     // If there are no rows with this username and password combination then redirect the user
     session_destroy();
