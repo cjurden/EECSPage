@@ -136,6 +136,32 @@ if($result){
 	}
 }
 
+function populateEvent(){
+	$sql = "SELECT * FROM EVENTS";
+	$result = mysql_query($sql);
+	var_dump($result);
+	echo"<p>
+		trying to populate events
+	</p>";
+	while($row = mysql_fetch_array($result)){
+		echo "<option>".$row['NAME']."</option>";
+	}
+}
+
+function populateAdmin() {
+	$quer = "SELECT * FROM USERS";
+	$res = mysql_query($quer);
+	var_dump($res);
+	echo"<p>
+		trying to populate admins
+	</p>";
+	while($row = mysql_fetch_array($res)){
+		if($row['ADMIN'] == 0){
+			echo "<option>".$row['USERNAME']."</option>";
+		}
+	}
+}
+
 if($_POST["row"] == null || $_POST["section"] == null || $_POST["seat"] == null || $_POST["event"] == null){
 	echo "<p>Not coming from seat adder!</p>";
 }else{
@@ -225,28 +251,6 @@ if($_POST['ticket'] == null || $_POST['file'] == null) {
 	$arr = mysql_fetch_array($array);
 	var_dump($arr);
 	write_tabbed_file('prices.tsv', $arr, true);
-}
-
-
-function populateEvent(){
-	$sql = "SELECT * FROM EVENTS";
-	$result = mysql_query($sql);
-	var_dump($result);
-
-	while($row = mysql_fetch_array($result)){
-		echo "<option>".$row['NAME']."</option>";
-	}
-}
-
-function populateAdmin() {
-	$quer = "SELECT * FROM USERS";
-	$res = mysql_query($quer);
-	var_dump($res);
-	while($row = mysql_fetch_array($res)){
-		if($row['ADMIN'] == 0){
-			echo "<option>".$row['USERNAME']."</option>";
-		}
-	}
 }
 ?>
 
