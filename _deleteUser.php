@@ -22,6 +22,7 @@
     header( 'Location: login.php' );
   }
   else if($result){
+    var_dump($_POST);
     if(isset($_POST)){
       $sql = "DELETE FROM USERS WHERE USERNAME = '".$_POST['username']."'";
       $res = mysql_query($sql);

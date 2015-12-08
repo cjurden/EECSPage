@@ -157,8 +157,8 @@
 												?>
 											</select>
 									</div>
-								</div>
 									<input class='btn btn-primary' type='submit' value= 'Delete User'>
+								</div>
 							</form>
 						</div>
 					</div>
