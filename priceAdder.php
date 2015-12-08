@@ -9,6 +9,14 @@
   include ROOT_PATH.'/public_html/base.php';
 
   function populateTicket(){
+    $sql = "SELECT * FROM TICKET";
+    $result = mysql_query($sql);
+    while($row = mysql_fetch_array($result)){
+      echo "<option>".$row['TID']."</option>";
+    }
+  }
+/* I AM POSITIVE THE BELOW QUERY WORKS, NOT SURE WHY IT IS NOT LOADING CORRECT INFO.
+  function populateTicket(){
     $sql = "SELECT E.NAME, S.SECTION, S.ROW, S.SEATNO FROM TICKET AS T, RSEAT AS S, EVENT AS E WHERE T.SID = R.SID AND E.EID = T.EID";
     $result = mysql_query($sql);
     var_dump($result);
@@ -16,7 +24,7 @@
     while($row = mysql_fetch_array($result)){
       echo "<option>Event: ".$row['NAME']." | Section: ".$row['SECTION']." | Row: ".$row['ROW']." | Seat: ".$row['SEATNO']."</option>";
     }
-  }
+  }*/
 ?>
 <!DOCTYPE html>
 <html>
