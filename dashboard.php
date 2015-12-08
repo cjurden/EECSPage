@@ -29,7 +29,7 @@
 			trying to populate admins
 		</p>";
 		while($row = mysql_fetch_array($res)){
-			if($row['ADMIN'] == 0){
+			if($row['ADMIN'] == false){
 				echo "<option>".$row['USERNAME']."</option>";
 			}
 		}
