@@ -44,7 +44,7 @@
     session_destroy();
     header( 'Location: login.php' );
   }
-  else if ($result){
+  else if ($result && $_SESSION['admin'] == null){
     	if(mysql_result($result, 0, "ADMIN")=="1")
     	{
     		$_SESSION['admin'] = true;
@@ -54,5 +54,12 @@
     		$_SESSION['admin'] = false;
         header( 'Location: dashboard.php');
     	}
+  }
+  else if($result && $_SESSION['admin'] != null){
+    if($_SESSION['admin'] == true){
+      header( 'Location: Adashboard.php' );
+    } else if($_SESSION['admin'] == false){
+      header( 'Location: dashboard.php' );
+    }
   }
  ?>
