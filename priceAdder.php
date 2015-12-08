@@ -10,7 +10,7 @@
 
   function populateTicket(){
     $sql = "SELECT * FROM TICKET";
-    $result = mysql_query($sql,$database);
+    $result = mysql_query($sql);
     var_dump($result);
 
     while($row = mysql_fetch_array($result)){

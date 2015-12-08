@@ -120,7 +120,7 @@ if(!mysql_query($sql, $database)){
 	echo "<p>Query Failed!</p>";
 }
 
-$result = mysql_query($sql,$database);
+$result = mysql_query($sql);
 if($result && mysql_num_rows($result) == 0){
 	// If there are no rows with this username and password combination then redirect the user
 	header( 'Location: index.php' );
@@ -143,14 +143,14 @@ if($_POST["row"] == null || $_POST["section"] == null || $_POST["seat"] == null 
 	$eid = mysql_query("SELECT EID FROM EVENT WHERE NAME = '".$_POST['event']."' GROUP BY EID");
 
 	$insertTicket = "INSERT INTO TICKET (EID, SID) VALUES ('".$eid."','".$sid."')"; //insert query to get post variables from add ticket and activate the ticket
-  $R1 = mysql_query($insertTicket, $database);
+  $R1 = mysql_query($insertTicket);
 	if(!$R1){
 		echo "<p>
 		 insert into ticket failed
 		</p>";
 	}
   $activateSeat = "INSERT INTO SEAT (SID) VALUES('".$sid."')";
-  $R2 = mysql_query($activateSeat, $database);
+  $R2 = mysql_query($activateSeat);
 	if(!$R2){
 		echo "<p>
 		 insert into seat table failed
@@ -165,7 +165,7 @@ if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null ||
 	echo "<p>not coming from event adder!</p>";
 }else{
 	$VIDquer = "SELECT VID FROM VENUE WHERE NAME = ".$_POST['venue']." GROUP BY VID";
-	$vid = mysql_query($VIDquer, $database);
+	$vid = mysql_query($VIDquer);
   $event = "INSERT INTO EVENT (NAME, TYPE, DATE, VID) VALUES ('".$_POST['name']."', '".$_POST['type']."', '".$_POST['date']."', '".$vid."')";
 	$result = mysql_query($event);
 	if(!$result){
@@ -185,7 +185,7 @@ if($_POST['ticket'] == null || $_POST['file'] == null) {
 	echo "<p>not coming from price adder!</p>";
 }else{
 	$TIDquer = "SELECT TID FROM TICKET WHERE NAME = '".$_POST['name']."'";
-	$tid = mysql_query($VIDquer, $database);
+	$tid = mysql_query($VIDquer);
 	var_dump($tid);
 	$file = fopen($_POST['file'], "r");
 	while(! feof($file))
@@ -199,7 +199,7 @@ if($_POST['ticket'] == null || $_POST['file'] == null) {
 
 function populateEvent(){
 	$sql = "SELECT * FROM EVENTS";
-	$result = mysql_query($sql,$database);
+	$result = mysql_query($sql);
 	var_dump($result);
 
 	while($row = mysql_fetch_array($result)){

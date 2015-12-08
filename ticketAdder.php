@@ -8,7 +8,7 @@
 
   function populateEvent(){
     $sql = "SELECT * FROM EVENT";
-    $result = mysql_query($sql,$database);
+    $result = mysql_query($sql);
     if(!$result){
       echo "<p>
       failed to populate events
@@ -36,7 +36,7 @@
 
   function populateRow(){
     $sql = "SELECT * FROM RSEAT";
-    $result = mysql_query($sql,$database);
+    $result = mysql_query($sql);
     var_dump($result);
     if(!$result){
       echo "<p>
@@ -50,7 +50,7 @@
 
   function populateSeat(){
     $sql = "SELECT * FROM RSEAT";
-    $result = mysql_query($sql,$database);
+    $result = mysql_query($sql);
     var_dump($result);
     if(!$result){
       echo "<p>
