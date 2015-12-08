@@ -241,7 +241,7 @@ function populateEvent(){
 function populateAdmin() {
 	$quer = "SELECT * FROM USERS";
 	$res = mysql_query($quer);
-
+	var_dump($res);
 	while($row = mysql_fetch_array($res)){
 		if($row['ADMIN'] == 0){
 			echo "<option>".$row['USERNAME']."</option>";
