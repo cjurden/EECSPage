@@ -103,48 +103,6 @@
 								<a class='btn btn-primary' href='priceAdder.php'style='!text-decoration: none;'>Add Price</a>
 								</div>
 								<br />
-									<div class='container' id='adminEditMenu'>
-										<div class='row'>
-										<div class='form-horizontal' method='post' action='_updateUser.php'>
-											<div class='form-group'>
-												<div class='well' id='well2' style='overflow: auto;'>
-														<select class='form-control'>
-															<option disabled selected name="username">
-																Users
-															</option>
-															<?php
-																populateAdmin();
-															?>
-														</select>
-												</div>
-											</div>
-											<div class="row">
-												<input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit Changes'>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class='container' id='DeleteMenu'>
-									<div class='row'>
-									<div class='form-horizontal' method='post' action='_deleteUser.php'>
-										<div class='form-group'>
-											<div class='well' id='well2' style='overflow: auto;'>
-													<select class='form-control'>
-														<option disabled selected name="username">
-															Users
-														</option>
-														<?php
-															populateAdmin();
-														?>
-													</select>
-											</div>
-										</div>
-										<div class="row">
-											<input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Delete User'>
-										</div>
-									</div>
-								</div>
-							</div>
 								<script>
 									$(document).ready(function (){
 										$('#adminEdit').onClick(function (){
@@ -157,7 +115,48 @@
 								</script>
 					<?php
 						if($_SESSION['admin'] == true){
-							echo "";
+							echo "<div class='container' id='adminEditMenu'>
+								<div class='row'>
+								<div class='form-horizontal' method='post' action='_updateUser.php'>
+									<div class='form-group'>
+										<div class='well' id='well2' style='overflow: auto;'>
+												<select class='form-control'>
+													<option disabled selected name='username'>
+														Users
+													</option>
+													<?php
+														populateAdmin();
+													?>
+												</select>
+										</div>
+									</div>
+									<div class='row'>
+										<input class='btn btn-primary col-sm-offset-6' type='submit' value= 'Submit Changes'>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='container' id='DeleteMenu'>
+							<div class='row'>
+							<div class='form-horizontal' method='post' action='_deleteUser.php'>
+								<div class='form-group'>
+									<div class='well' id='well2' style='overflow: auto;'>
+											<select class='form-control'>
+												<option disabled selected name='username'>
+													Users
+												</option>
+												<?php
+													populateAdmin();
+												?>
+											</select>
+									</div>
+								</div>
+								<div class='row'>
+									<input class='btn btn-primary col-sm-offset-6' type='submit' value= 'Delete User'>
+								</div>
+							</div>
+						</div>
+					</div>";
 			 			}
 						if($_SESSION['admin'] == false){
 							echo "<br />
