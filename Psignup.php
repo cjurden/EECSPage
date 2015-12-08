@@ -72,6 +72,7 @@
     									$email,
     									$admin];
     		var_dump($variables);
+            header( 'Location: dashboard.php');
     	}
     	else {
     		echo "<p>
