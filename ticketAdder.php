@@ -108,7 +108,7 @@
           </select>
       </div>
         <div class="form-group">
-          <label for="events">Seat:</label>
+          <label for="events">Seat No:</label>
           <select class="form-control" name="seat">
             <option disabled>Seat</option>
             <?php populateSeat();?>

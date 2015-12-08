@@ -10,7 +10,7 @@
 	include ROOT_PATH.'/public_html/base.php';
 
 	function populateEvent(){
-		$sql = "SELECT * FROM EVENTS";
+		$sql = "SELECT * FROM EVENT";
 		$result = mysql_query($sql);
 		var_dump($result);
 		echo"<p>
@@ -97,38 +97,40 @@
 				<div class="row">
 					<a class="btn btn-primary" href="ticketAdder.php" style="!text-decoration: none;">Add Ticket</a>
 					<button class="btn btn-primary" style="!text-decoration: none;">Event Data</button>
+					<a class='btn btn-primary' href='eventAdder.php' style='text-decoration: none;'>Add Event</a>
+								<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>
+								<a class='btn btn-primary' href='priceAdder.php'style='!text-decoration: none;'>Add Price</a>
+								</div>
+								<br />
+									<div class='container' id='adminMenu'>
+										<div class='row'>
+										<div class='form-horizontal' method='post' action='_updateUser.php'>
+											<div class='form-group'>
+												<div class='well' id='well2' style='overflow: auto;'>
+														<select class='form-control'>
+															<option disabled selected name="username">
+																Users
+															</option>
+															<?php
+																populateAdmin();
+															?>
+														</select>
+												</div>
+											</div>
+											<input class='btn btn-primary col-sm-offset-6' type="submit" value= 'Submit Changes'>
+										</div>
+									</div>
+								</div>
+								<script>
+									$(document).ready(function (){
+										$('#adminEdit').onClick(function (){
+											$('#adminMenu').toggle(slide);
+										});
+									});
+								</script>
 					<?php
 						if($_SESSION['admin'] == true){
-							echo "<a class='btn btn-primary'href='eventAdder.php' style='text-decoration: none;''>Add Event</a>
-										<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>
-										<a class='btn btn-primary' href='priceAdder.php'style='!text-decoration: none;'>Add Price</a>
-							 			</div>
-										<br />
-											<div class='container' id='adminMenu'>
-												<div class='row'>
-												<div class='form-horizontal' method='post' action='dashboard.php'>
-												</div>
-													<div class='col-md-3'>
-								            <div class='well' id='well2' style='overflow: auto;'>
-								                <select class='form-control'>
-																	<option disabled selected>
-												            Users
-												          </option>
-												          <?php
-												            populateAdmin();
-												          ?>
-																</select>
-								            </div>
-												</div>
-							        </div>
-											</div>
-										<!--	<script>
-											$(document).ready(function() {
-													 $('#adminEdit').click(function() {
-																$('#adminMenu').toggle('slide');
-													 });
-											 });
-										 </script>-->";
+							echo "";
 			 			}
 						if($_SESSION['admin'] == false){
 							echo "<br />
