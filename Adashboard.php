@@ -129,8 +129,8 @@
 								<form class='form-horizontal' method='post' action='_updateUser.php'>
 									<div class='form-group'>
 										<div class='well' id='well2' style='overflow: auto;'>
-												<select class='form-control'>
-													<option disabled selected name='username'>
+												<select class='form-control' name='username'>
+													<option disabled selected>
 														Users
 													</option>
 														<?php
@@ -148,8 +148,8 @@
 							<form class='form-horizontal' method='post' action='_deleteUser.php'>
 								<div class='form-group'>
 									<div class='well' id='well2' style='overflow: auto;'>
-											<select class='form-control'>
-												<option disabled selected name='username'>
+											<select class='form-control' name='username'>
+												<option disabled selected>
 													Users
 												</option>
 												<?php
