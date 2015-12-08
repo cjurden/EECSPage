@@ -124,10 +124,8 @@
 												<select class='form-control'>
 													<option disabled selected name='username'>
 														Users
-													</option>
-													<?php
-														populateAdmin();
-													?>
+													</option>".
+														populateAdmin()."
 												</select>
 										</div>
 									</div>
