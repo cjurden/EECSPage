@@ -222,8 +222,9 @@ if($_POST['ticket'] == null || $_POST['file'] == null) {
 	}
 	$quer = "SELECT * FROM PRICE";
 	$array = mysql_query($quer);
-	var_dump($array);
-	write_tabbed_file('prices.tsv', $array, $save_keys, true);
+	$arr = mysql_fetch_array($array);
+	var_dump($arr);
+	write_tabbed_file('prices.tsv', $arr, $save_keys, true);
 }
 
 
