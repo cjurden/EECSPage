@@ -97,9 +97,6 @@
 				<div class="row">
 					<a class="btn btn-primary" href="ticketAdder.php" style="!text-decoration: none;">Add Ticket</a>
 					<button class="btn btn-primary" style="!text-decoration: none;">Event Data</button>
-					<a class='btn btn-primary' href='eventAdder.php' style='text-decoration: none;'>Add Event</a>
-								<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>
-								<button class='btn btn-primary' id='userDel'>Delete User</button>
 								<a class='btn btn-primary' href='priceAdder.php'style='!text-decoration: none;'>Add Price</a>
 								</div>
 								<br />
@@ -115,7 +112,11 @@
 								</script>
 					<?php
 						if($_SESSION['admin'] == true){
-							echo "<div class='container' id='adminEditMenu'>
+							echo "
+							<a class='btn btn-primary' href='eventAdder.php' style='text-decoration: none;'>Add Event</a>
+										<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>
+										<button class='btn btn-primary' id='userDel'>Delete User</button>
+							<div class='container' id='adminEditMenu'>
 								<div class='row'>
 								<div class='form-horizontal' method='post' action='_updateUser.php'>
 									<div class='form-group'>
