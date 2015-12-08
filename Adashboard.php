@@ -99,6 +99,8 @@
 			<br />
 			<script>
 				$(document).ready(function (){
+					$('#adminEditMenu').hide();
+					$('#DeleteMenu').hide();
 					$('#adminEdit').onClick(function (){
 						$('#adminEditMenu').toggle(slide);
 					});
