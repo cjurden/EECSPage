@@ -85,7 +85,7 @@
       <div class="form-group">
         <label for="events">Select an Event:</label>
         <select class="form-control" name="event">
-          <option disabled>
+          <option disabled >
             Events
           </option>
           <?php
@@ -96,21 +96,21 @@
       <div class="form-group">
             <label for="events">Section:</label>
           <select class="form-control" name="section">
-            <option disabled>Section</option>
+            <option disabled selected>Section</option>
             <?php populateSection(); ?>
           </select>
       </div>
       <div class="form-group">
           <label for="events">Row:</label>
           <select class="form-control" name="row">
-            <option disabled>Row</option>
+            <option disabled selected>Row</option>
             <?php populateRow();?>
           </select>
       </div>
         <div class="form-group">
           <label for="events">Seat No:</label>
           <select class="form-control" name="seat">
-            <option disabled>Seat</option>
+            <option disabled selected>Seat</option>
             <?php populateSeat();?>
           </select>
         </div>

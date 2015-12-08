@@ -8,7 +8,7 @@
   define('ROOT_PATH', $mRootpath);
 
   include ROOT_PATH.'public_html/base.php';
-  var_dump($_SESSION);
+
 if(isset($_SESSION) && $_SESSION!=null)
 {
   $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
