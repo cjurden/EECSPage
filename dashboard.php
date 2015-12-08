@@ -378,7 +378,7 @@ function populateAdmin() {
 
 				var line = d3.svg.line()
 				    .x(function(d) { return x(d.date); })
-				    .y(function(d) { return y(d.close); });
+				    .y(function(d) { return y(d.price); });
 
 				var svg = d3.select("body").append("svg")
 				    .attr("width", width + margin.left + margin.right)
@@ -391,7 +391,7 @@ function populateAdmin() {
 
 				  data.forEach(function(d) {
 				    d.date = parseDate(d.date);
-				    d.close = +d.close;
+				    d.price = +d.price;
 				  });
 
 				  x.domain(d3.extent(data, function(d) { return d.date; }));
