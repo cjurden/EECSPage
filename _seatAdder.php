@@ -21,18 +21,6 @@
     session_destroy();
     header( 'Location: login.php' );
   }
-  else if ($result){
-    if(!isset($_POST)){
-    	echo "<p>Not coming from seat adder!</p>";
-    }
-    else if($checker && mysql_num_rows($result) > 0) {
-      if($_SESSION['admin'] == true){
-        header( 'Location: Adashboard.php' );
-      } else if($_SESSION['admin'] == false){
-        header( 'Location: dashboard.php' );
-      }
-    }
-  }
     else{
       $sid = mysql_query("SELECT SID FROM RSEAT WHERE ROW = '".$_POST["row"]."' AND SECTION = '".$_POST["section"]."' AND SEATNO = '".$_POST["seat"]."' GROUP BY SID");
     	$eid = mysql_query("SELECT EID FROM EVENT WHERE NAME = '".$_POST['event']."' GROUP BY EID");
@@ -55,7 +43,6 @@
       		 insert into seat table failed
       		</p>";
       	}
-      }
       if($R2 && $R1){
         if($_SESSION['admin'] == true){
           header( 'Location: Adashboard.php' );
@@ -64,4 +51,18 @@
         }
       }
     }
+    else if ($result){
+      if(!isset($_POST)){
+      	echo "<p>Not coming from seat adder!</p>";
+      }
+      else if($checker && mysql_num_rows($result) > 0) {
+        if($_SESSION['admin'] == true){
+          header( 'Location: Adashboard.php' );
+        } else if($_SESSION['admin'] == false){
+          header( 'Location: dashboard.php' );
+        }
+      }
+    }
+  }
+
 ?>
