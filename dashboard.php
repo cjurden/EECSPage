@@ -290,7 +290,7 @@ if($_POST['ticket'] == null || $_POST['file'] == null) {
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">TicketMiner</a>
+        <a class="navbar-brand" href="index.php">TicketMiner</a>
       </div>
 			<div class="navbar navbar-left">
 				<a class="btn btn-primary " href="kill.php" style="!text-decoration: none;">Log Out</a>

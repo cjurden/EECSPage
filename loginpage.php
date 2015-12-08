@@ -35,7 +35,7 @@
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">TicketMiner</a>
+        <a class="navbar-brand" href="index.php">TicketMiner</a>
       </div>
       <div class="nav navbar-nav navbar-left">
         <button class="btn btn-default">Log Out</button>

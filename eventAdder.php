@@ -45,7 +45,7 @@
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">TicketMiner</a>
+        <a class="navbar-brand" href="index.php">TicketMiner</a>
         <a class="btn btn-primary" href="dashboard.php"style="!text-decoration: none;">Dashboard</a>
       </div>
     </nav>
