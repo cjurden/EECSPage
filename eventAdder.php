@@ -50,7 +50,7 @@
       </div>
     </nav>
     <div class="container">
-    <form class="form-horizontal" action= "dashboard.php" method="post">
+    <form class="form-horizontal" action= "_eventAdder.php" method="post">
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control" id="name" placeholder="Name" name="name">

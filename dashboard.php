@@ -39,28 +39,6 @@ function populateAdmin() {
 	}
 }
 
-if($_POST["row"] == null || $_POST["section"] == null || $_POST["seat"] == null || $_POST["event"] == null){
-	echo "<p>Not coming from seat adder!</p>";
-}else{
-  $sid = mysql_query("SELECT SID FROM RSEAT WHERE ROW = '".$_POST["row"]."' AND SECTION = '".$_POST["section"]."' AND SEATNO = '".$_POST["seat"]."' GROUP BY SID");
-	$eid = mysql_query("SELECT EID FROM EVENT WHERE NAME = '".$_POST['event']."' GROUP BY EID");
-
-	$insertTicket = "INSERT INTO TICKET (EID, SID) VALUES ('".$eid."','".$sid."')"; //insert query to get post variables from add ticket and activate the ticket
-  $R1 = mysql_query($insertTicket);
-	if(!$R1){
-		echo "<p>
-		 insert into ticket failed
-		</p>";
-	}
-  $activateSeat = "INSERT INTO SEAT (SID) VALUES('".$sid."')";
-  $R2 = mysql_query($activateSeat);
-	if(!$R2){
-		echo "<p>
-		 insert into seat table failed
-		</p>";
-	}
-}
-
 
 //is there a better way to determine WHICH page the user is coming from?
 if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null || $_POST['venue'] == null){
