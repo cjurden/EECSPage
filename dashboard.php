@@ -184,8 +184,7 @@ if($_POST['ticket'] == null || $_POST['file'] == null) {
 	//do something
 	echo "<p>not coming from price adder!</p>";
 }else{
-	$TIDquer = "SELECT TID FROM TICKET WHERE NAME = '".$_POST['name']."'";
-	$tid = mysql_query($VIDquer);
+	$tid = $_POST['ticket'];
 	var_dump($tid);
 	$file = fopen($_POST['file'], "r");
 	while(! feof($file))
