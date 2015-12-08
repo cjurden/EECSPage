@@ -392,6 +392,8 @@ function populateAdmin() {
 				  data.forEach(function(d) {
 				    d.date = parseDate(d.date);
 				    d.price = +d.price;
+						console.log(d.price);
+						console.log(d.date);
 				  });
 
 				  x.domain(d3.extent(data, function(d) { return d.date; }));
