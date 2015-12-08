@@ -68,7 +68,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Add Ticket</title>
   	<!-- Latest compiled and minified CSS -->
 
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -76,7 +76,7 @@
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">INSERT LOGO</a>
+        <a class="navbar-brand" href="index.html">TicketMiner</a>
         <a class="btn btn-primary" href="dashboard.php"style="!text-decoration: none;">Dashboard</a>
       </div>
     </nav>

@@ -244,7 +244,7 @@ function populateAdmin() {
 
 	while($row = mysql_fetch_array($res)){
 		if($row['ADMIN'] == 0){
-			echo "<option>".$row['FIRSTNAME']." ".$row['LASTNAME']." ".$row['ADMIN']."</option>";
+			echo "<option>".$row['USERNAME']."</option>";
 		}
 	}
 }
@@ -254,40 +254,44 @@ function populateAdmin() {
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Dashboard</title>
     <!--<link rel="stylesheet" href="cgi-bin/css/main.css">-->
   	<!-- Latest compiled and minified CSS -->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="sylesheet" href = "cgi-bin/css/main.css">
 		<style>
-		body {
-		  font: 10px sans-serif;
-		}
+			body {
+			  font: 10px sans-serif;
+			}
 
-		.axis path,
-		.axis line {
-		  fill: none;
-		  stroke: #000;
-		  shape-rendering: crispEdges;
-		}
+			.axis path,
+			.axis line {
+			  fill: none;
+			  stroke: #000;
+			  shape-rendering: crispEdges;
+			}
 
-		.x.axis path {
-		  display: none;
-		}
+			.x.axis path {
+			  display: none;
+			}
 
-		.line {
-		  fill: none;
-		  stroke: steelblue;
-		  stroke-width: 1.5px;
-		}
+			.line {
+			  fill: none;
+			  stroke: steelblue;
+			  stroke-width: 1.5px;
+			}
 		</style>
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
   </head>
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">INSERT LOGO</a>
+        <a class="navbar-brand" href="index.html">TicketMiner</a>
       </div>
+			<div class="navbar navbar-right">
+				<a class="btn btn-primary" href="index.php" style="!text-decoration: none;">Log Out</a>
+			</div>
+		</div>
     </nav>
     <div class="container">
       <div class="row">
@@ -316,6 +320,8 @@ function populateAdmin() {
 										<br />
 											<div class='container' id='adminMenu'>
 												<div class='row'>
+												<div class='form-horizontal' method='post' action='dashboard.php'>
+												</div>
 													<div class='col-md-3'>
 								            <div class='well' id='well2' style='overflow: auto;'>
 								                <select class='form-control'>
@@ -346,9 +352,6 @@ function populateAdmin() {
 	    </div>
 		<div>
 			<div>
-				<svg id="visualization1" width="1000" heigh="500">
-
-				</svg>
 			</div>
 		</div>
 		<div class="container">
@@ -381,6 +384,7 @@ function populateAdmin() {
 				    .y(function(d) { return y(d.PRICE); });
 
 				var svg = d3.select("body").append("svg")
+						.attr("class", "col-md-offset-2")
 				    .attr("width", width + margin.left + margin.right)
 				    .attr("height", height + margin.top + margin.bottom)
 				  .append("g")

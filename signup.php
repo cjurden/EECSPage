@@ -13,7 +13,7 @@ foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html")
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="cgi-bin/css/main.css">
   	<!-- Latest compiled and minified CSS -->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -22,7 +22,7 @@ foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html")
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">INSERT LOGO</a>
+        <a class="navbar-brand" href="index.php">TicketMiner</a>
       </div>
     </nav>
     <div class="page-header col-sm-offset-1 col-sm-10">

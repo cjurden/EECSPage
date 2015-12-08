@@ -14,7 +14,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
+	<title>TicketMiner</title>
 	<link rel="stylesheet" href="cgi-bin/css/main.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
 <body>
 	<nav class="navbar navbar-default" role="navigation">
 	  <div class="navbar-header">
-	    <a class="navbar-brand" href="index.html">INSERT LOGO</a>
+	    <a class="navbar-brand" href="index.html">TicketMiner</a>
 	  </div>
 	</nav>
 	<div class="jumbotron col-md-offset-1 col-md-10">

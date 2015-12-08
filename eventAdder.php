@@ -18,6 +18,9 @@
   	// If there are no rows with this username and password combination then redirect the user
   	header( 'Location: index.php' );
   }
+  if($_SESSION['admin'] == false){
+    	header( 'Location: .php' );
+  }
 
   function populateType(){
     $sql = "SELECT * FROM EVENTS";
@@ -34,7 +37,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Add Event</title>
   	<!-- Latest compiled and minified CSS -->
 
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -42,7 +45,7 @@
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">INSERT LOGO</a>
+        <a class="navbar-brand" href="index.html">TicketMiner</a>
         <a class="btn btn-primary" href="dashboard.php"style="!text-decoration: none;">Dashboard</a>
       </div>
     </nav>
