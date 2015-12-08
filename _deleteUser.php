@@ -26,7 +26,7 @@
       $sql = "DELETE FROM USERS WHERE USERNAME = '".$_POST['username']."'";
       $res = mysql_query($sql);
       if($res){
-        header( 'Location: Adashboard.php' );
+      //  header( 'Location: Adashboard.php' );
       }
       else{
         echo "<p>
