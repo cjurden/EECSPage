@@ -102,10 +102,10 @@
 					$('#adminEditMenu').hide();
 					$('#DeleteMenu').hide();
 					$('#adminEdit').click(function (){
-						$('#adminEditMenu').toggle(slide);
+						$('#adminEditMenu').toggle("slide");
 					});
 					$('#userDel').click(function (){
-						$('#DeleteMenu').toggle(slide);
+						$('#DeleteMenu').toggle("slide");
 					});
 				});
 			</script>
