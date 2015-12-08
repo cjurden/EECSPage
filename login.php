@@ -8,6 +8,7 @@
   define('ROOT_PATH', $mRootpath);
 
   include ROOT_PATH.'public_html/base.php';
+
 if(isset($_SESSION))
 {
   $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
@@ -38,13 +39,10 @@ if(isset($_SESSION))
       <div class="navbar-header">
         <a class="navbar-brand" href="index.php">TicketMiner</a>
       </div>
-      <div class="nav navbar-nav navbar-left">
-        <button class="btn btn-default">Log Out</button>
-      </div>
     </nav>
     <div class='jumbotron'>
       <div class="container">
-        <form class="form-horizontal" action="dashboard.php" method="post">
+        <form class="form-horizontal" action="_login.php" method="post">
           <div class="form-group">
             <label for="email">Username:</label>
             <input type="text" class="form-control" name="username">
