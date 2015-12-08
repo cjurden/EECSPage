@@ -377,8 +377,8 @@ function populateAdmin() {
 				    .orient("left");
 
 				var line = d3.svg.line()
-				    .x(function(d) { return x(d.date); })
-				    .y(function(d) { return y(d.price); });
+				    .x(function(d) { return x(d.DATE); })
+				    .y(function(d) { return y(d.PRICE); });
 
 				var svg = d3.select("body").append("svg")
 				    .attr("width", width + margin.left + margin.right)
@@ -390,14 +390,14 @@ function populateAdmin() {
 				  if (error) throw error;
 
 				  data.forEach(function(d) {
-				    d.date = parseDate(d.date);
-				    d.price = +d.price;
-						console.log(d.price);
-						console.log(d.date);
+				    d.DATE = parseDate(d.DATE);
+				    d.PRICE = +d.PRICE;
+						console.log(d.PRICE);
+						console.log(d.DATE);
 				  });
 
-				  x.domain(d3.extent(data, function(d) { return d.date; }));
-				  y.domain(d3.extent(data, function(d) { return d.price; }));
+				  x.domain(d3.extent(data, function(d) { return d.DATE; }));
+				  y.domain(d3.extent(data, function(d) { return d.PRICE; }));
 
 				  svg.append("g")
 				      .attr("class", "x axis")
