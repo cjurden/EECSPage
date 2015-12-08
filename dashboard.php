@@ -179,6 +179,33 @@ if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null ||
 	}
 }
 
+function write_tabbed_file($filepath, $array, $save_keys=false){
+    $content = '';
+
+    reset($array);
+    while(list($key, $val) = each($array)){
+
+        // replace tabs in keys and values to [space]
+        $key = str_replace("\t", " ", $key);
+        $val = str_replace("\t", " ", $val);
+
+        if ($save_keys){ $content .=  $key."\t"; }
+
+        // create line:
+        $content .= (is_array($val)) ? implode("\t", $val) : $val;
+        $content .= "\n";
+    }
+
+    if (file_exists($filepath) && !is_writeable($filepath)){
+        return false;
+    }
+    if ($fp = fopen($filepath, 'w+')){
+        fwrite($fp, $content);
+        fclose($fp);
+    }
+    else { return false; }
+    return true;
+}
 //coming from price adder
 if($_POST['ticket'] == null || $_POST['file'] == null) {
 	//do something
@@ -193,6 +220,9 @@ if($_POST['ticket'] == null || $_POST['file'] == null) {
 		$event = "INSERT INTO PRICE (TID, PRICE) VALUES ('".$tid."', '".$price[0]."')";
 		$result = mysql_query($event);
 	}
+	$quer = "SELECT * FROM PRICE";
+	$array = mysql_query($quer);
+	write_tabbed_file('prices.tsv', $array, $save_keys, true);
 }
 
 
@@ -290,6 +320,13 @@ function populateAdmin() {
 						}
 				 ?>
 	    </div>
+		<div>
+			<div>
+				<svg id="visualization1" width="1000" heigh="500">
+					
+				</svg>
+			</div>
+		</div>
 		<div class="container">
 			<div class="row">
 				<script>
@@ -327,7 +364,7 @@ function populateAdmin() {
 				  .append("g")
 				    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-				d3.tsv("priceData.csv", function(error, data) {
+				d3.tsv("PRICEDATA.csv", function(error, data) {
 				  if (error) throw error;
 
 				  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
