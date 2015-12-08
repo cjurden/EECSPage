@@ -102,6 +102,8 @@
 			<br />
 			<script>
 				$(document).ready(function (){
+					$('#adminEditMenu').hide();
+					$('#DeleteMenu').hide();
 					$('#adminEdit').click(function (){
 						$('#adminEditMenu').toggle("slide");
 					});
@@ -120,7 +122,7 @@
 											<button class='btn btn-primary' id='userDel'>Delete User</button>
 								</div>
 								<br />
-							<div class='container' class="hide"id='adminEditMenu'>
+							<div class='container' class="hide" id='adminEditMenu'>
 								<div class='row'>
 								<div class='form-horizontal' method='post' action='_updateUser.php'>
 									<div class='form-group'>
