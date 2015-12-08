@@ -101,10 +101,10 @@
 				$(document).ready(function (){
 					$('#adminEditMenu').hide();
 					$('#DeleteMenu').hide();
-					$('#adminEdit').onClick(function (){
+					$('#adminEdit').click(function (){
 						$('#adminEditMenu').toggle(slide);
 					});
-					$('#userDel').onClick(function (){
+					$('#userDel').click(function (){
 						$('#DeleteMenu').toggle(slide);
 					});
 				});
