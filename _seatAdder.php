@@ -25,7 +25,7 @@
       $sid = mysql_query("SELECT SID FROM RSEAT WHERE ROW = '".$_POST["row"]."' AND SECTION = '".$_POST["section"]."' AND SEATNO = '".$_POST["seat"]."' GROUP BY SID");
     	$eid = mysql_query("SELECT EID FROM EVENT WHERE NAME = '".$_POST['event']."' GROUP BY EID");
       //check for duplicate values
-      $check = "SELECT * FROM TICKET WHERE EID = '".$eid."' AND VID = '".$vid."'";
+      $check = "SELECT * FROM TICKET WHERE EID = '".$eid."' AND SID = '".$sid."'";
       $checker = mysql_query($check);
       if($checker && mysql_num_rows($result) == 0){
         // If there are no rows with this username and password combination then redirect the user
