@@ -135,9 +135,7 @@
 												</select>
 										</div>
 									</div>
-									<div class='row'>
 										<input class='btn btn-primary col-sm-offset-6' type='submit' value= 'Submit Changes'>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -156,9 +154,7 @@
 											</select>
 									</div>
 								</div>
-								<div class='row'>
 									<input class='btn btn-primary col-sm-offset-6' type='submit' value= 'Delete User'>
-								</div>
 							</div>
 						</div>
 					</div>
