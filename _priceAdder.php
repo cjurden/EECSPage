@@ -69,5 +69,6 @@
       var_dump($arr);
       write_tabbed_file('prices.tsv', $arr, true);
     }
+  header( 'Location: dashboard.php' );
   }
 ?>

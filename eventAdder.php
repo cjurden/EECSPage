@@ -19,7 +19,7 @@
   	header( 'Location: index.php' );
   }
   if($_SESSION['admin'] == false){
-    	header( 'Location: .php' );
+    	header( 'Location: dashboard.php' );
   }
 
   function populateType(){

@@ -44,7 +44,7 @@
       </div>
     </nav>
     <div class="container">
-      <form class="form-horizontal" action="dashboard.php" method="post">
+      <form class="form-horizontal" action="_priceAdder.php" method="post">
         <div class="form-group">
           <label for="events">Select a Ticket:</label>
           <select class="form-control" name="ticket">

@@ -1,112 +1,39 @@
 <?php
-session_start();
-//var_dump($_SERVER['HTTP_REFERER']);
-$mRootpath = "";
-$mFilepath = explode('/',dirname(__DIR__));
-foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html"){break;}
-}
-define('ROOT_PATH', $mRootpath);
-
-include ROOT_PATH.'/public_html/base.php';
-
-var_dump($_POST);
-
-
-
-function populateEvent(){
-	$sql = "SELECT * FROM EVENTS";
-	$result = mysql_query($sql);
-	var_dump($result);
-	echo"<p>
-		trying to populate events
-	</p>";
-	while($row = mysql_fetch_array($result)){
-		echo "<option>".$row['NAME']."</option>";
+	session_start();
+	//var_dump($_SERVER['HTTP_REFERER']);
+	$mRootpath = "";
+	$mFilepath = explode('/',dirname(__DIR__));
+	foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html"){break;}
 	}
-}
+	define('ROOT_PATH', $mRootpath);
 
-function populateAdmin() {
-	$quer = "SELECT * FROM USERS";
-	$res = mysql_query($quer);
-	var_dump($res);
-	echo"<p>
-		trying to populate admins
-	</p>";
-	while($row = mysql_fetch_array($res)){
-		if($row['ADMIN'] == 0){
-			echo "<option>".$row['USERNAME']."</option>";
+	include ROOT_PATH.'/public_html/base.php';
+
+	function populateEvent(){
+		$sql = "SELECT * FROM EVENTS";
+		$result = mysql_query($sql);
+		var_dump($result);
+		echo"<p>
+			trying to populate events
+		</p>";
+		while($row = mysql_fetch_array($result)){
+			echo "<option>".$row['NAME']."</option>";
 		}
 	}
-}
 
-
-//is there a better way to determine WHICH page the user is coming from?
-if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null || $_POST['venue'] == null){
-	//do something
-	echo "<p>not coming from event adder!</p>";
-}else{
-	$VIDquer = "SELECT VID FROM VENUE WHERE NAME = ".$_POST['venue']." GROUP BY VID";
-	$vid = mysql_query($VIDquer);
-  $event = "INSERT INTO EVENT (NAME, TYPE, DATE, VID) VALUES ('".$_POST['name']."', '".$_POST['type']."', '".$_POST['date']."', '".$vid."')";
-	$result = mysql_query($event);
-	if(!$result){
-		echo "<p>
-		unsuccessful insertion of event
+	function populateAdmin() {
+		$quer = "SELECT * FROM USERS";
+		$res = mysql_query($quer);
+		var_dump($res);
+		echo"<p>
+			trying to populate admins
 		</p>";
-	}else {
-		echo "<p>
-		inserted event!
-		</p>";
+		while($row = mysql_fetch_array($res)){
+			if($row['ADMIN'] == 0){
+				echo "<option>".$row['USERNAME']."</option>";
+			}
+		}
 	}
-}
-
-function write_tabbed_file($filepath, $array, $save_keys=false){
-    $content = '';
-
-    reset($array);
-    while(list($key, $val) = each($array)){
-
-        // replace tabs in keys and values to [space]
-        $key = str_replace("\t", " ", $key);
-        $val = str_replace("\t", " ", $val);
-
-        if ($save_keys){ $content .=  $key."\t"; }
-
-        // create line:
-        $content .= (is_array($val)) ? implode("\t", $val) : $val;
-        $content .= "\n";
-    }
-
-    if (file_exists($filepath) && !is_writeable($filepath)){
-        return false;
-    }
-    if ($fp = fopen($filepath, 'w+')){
-        fwrite($fp, $content);
-        fclose($fp);
-    }
-    else { return false; }
-    return true;
-}
-//coming from price adder
-if($_POST['ticket'] == null || $_POST['file'] == null) {
-	//do something
-	echo "<p>not coming from price adder!</p>";
-}else{
-	$tid = $_POST['ticket'];
-	var_dump($tid);
-	$file = fopen($_POST['file'], "r");
-	while(! feof($file))
-	{
-		$price = (fgetcsv($file));
-		$event = "INSERT INTO PRICE (TID, PRICE) VALUES ('".$tid."', '".$price[0]."')";
-		$result = mysql_query($event);
-	}
-	$quer = "SELECT * FROM PRICE";
-	$array = mysql_query($quer);
-	$arr = mysql_fetch_array($array);
-	var_dump($arr);
-	write_tabbed_file('prices.tsv', $arr, true);
-}
 ?>
 
 <!DOCTYPE html>
