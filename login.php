@@ -8,7 +8,8 @@
   define('ROOT_PATH', $mRootpath);
 
   include ROOT_PATH.'public_html/base.php';
-
+if(isset($_SESSION))
+{
   $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
   // Check to see if the query fails
   if(!mysql_query($sql, $database)){
@@ -20,7 +21,7 @@
   	// If there are no rows with this username and password combination then redirect the user
   	header( 'Location: dashboard.php' );
   }
-
+}
 ?>
 <!DOCTYPE html>
 <html>
