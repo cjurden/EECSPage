@@ -30,7 +30,7 @@
 		</p>";
 		while($row = mysql_fetch_array($res)){
 			var_dump($row['ADMIN']);
-			if($row['ADMIN'] == 0){
+			if($row['ADMIN'] == '0'){
 				echo "<option>".$row['USERNAME']."</option>";
 			}
 		}
