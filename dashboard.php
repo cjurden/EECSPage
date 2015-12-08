@@ -246,6 +246,8 @@ function populateAdmin() {
 	            populateEvent();
 	          ?>
 	        </select>
+			</div>
+		</div>
 			<br />
 			<div class="container">
 				<div class="row">
@@ -257,6 +259,7 @@ function populateAdmin() {
 										<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>
 										<a class='btn btn-primary' href='priceAdder.php'style='!text-decoration: none;'>Add Price</a>
 							 			</div>
+										<br />
 											<div class='container' id='adminMenu'>
 												<div class='row'>
 													<div class='col-md-3'>
@@ -281,10 +284,12 @@ function populateAdmin() {
 											 });
 										 </script>-->";
 			 			}
+						if($_SESSION['admin'] == false){
+							echo "<br />
+										</div>";
+						}
 				 ?>
-	      </div>
 	    </div>
-		</div>
 		<div class="container">
 			<div class="row">
 				<script>
@@ -322,7 +327,7 @@ function populateAdmin() {
 				  .append("g")
 				    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-				d3.tsv("data.tsv", function(error, data) {
+				d3.tsv("priceData.csv", function(error, data) {
 				  if (error) throw error;
 
 				  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
