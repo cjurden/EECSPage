@@ -99,10 +99,66 @@
 					<a class="btn btn-primary" href="ticketAdder.php" style="!text-decoration: none;">Add Ticket</a>
 					<button class="btn btn-primary" style="!text-decoration: none;">Event Data</button>
 								<a class='btn btn-primary' href='priceAdder.php'style='!text-decoration: none;'>Add Price</a>
+								<a class='btn btn-primary' href='eventAdder.php' style='text-decoration: none;'>Add Event</a>
+											<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>
+											<button class='btn btn-primary' id='userDel'>Delete User</button>
 								</div>
 								<br />
-		<div class="container">
-			<div class="row">
+								<script>
+									$(document).ready(function (){
+										$('#adminEdit').onClick(function (){
+											$('#adminEditMenu').toggle(slide);
+										});
+										$('#userDel').onClick(function (){
+											$('#DeleteMenu').toggle(slide);
+										});
+									});
+								</script>
+							<div class='container' id='adminEditMenu'>
+								<div class='row'>
+								<div class='form-horizontal' method='post' action='_updateUser.php'>
+									<div class='form-group'>
+										<div class='well' id='well2' style='overflow: auto;'>
+												<select class='form-control'>
+													<option disabled selected name='username'>
+														Users
+													</option>
+														populateAdmin()
+												</select>
+										</div>
+									</div>
+									<div class='row'>
+										<input class='btn btn-primary col-sm-offset-6' type='submit' value= 'Submit Changes'>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='container' id='DeleteMenu'>
+							<div class='row'>
+							<div class='form-horizontal' method='post' action='_deleteUser.php'>
+								<div class='form-group'>
+									<div class='well' id='well2' style='overflow: auto;'>
+											<select class='form-control'>
+												<option disabled selected name='username'>
+													Users
+												</option>
+												<?php
+													populateAdmin();
+												?>
+											</select>
+									</div>
+								</div>
+								<div class='row'>
+									<input class='btn btn-primary col-sm-offset-6' type='submit' value= 'Delete User'>
+								</div>
+							</div>
+						</div>
+					</div>
+	    </div>
+		<div>
+			<div>
+			</div>
+		</div>
 				<script src="//d3js.org/d3.v3.min.js"></script>
 				<script>
 

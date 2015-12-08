@@ -26,7 +26,7 @@
       $sql = "UPDATE USERS SET ADMIN = true WHERE USERNAME = '".$_POST['username']."'";
       $res = mysql_query($sql);
       if($res){
-        header( 'Location: dashboard.php' );
+        header( 'Location: Adashboard.php' );
       }
       else{
         echo "<p>

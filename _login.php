@@ -48,10 +48,11 @@
     	if(mysql_result($result, 0, "ADMIN")=="1")
     	{
     		$_SESSION['admin'] = true;
+        header( 'Location: Adashboard.php');
     	}
     	else{
     		$_SESSION['admin'] = false;
+        header( 'Location: dashboard.php');
     	}
-    header( 'Location: dashboard.php');
   }
  ?>

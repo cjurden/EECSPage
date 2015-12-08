@@ -44,7 +44,11 @@
     	}
     }
     if($R2 && $R1){
-      header( 'Location: dashboard.php');
+      if($_SESSION['admin'] == true){
+        header( 'Location: Adashboard.php' );
+      } else if($_SESSION['admin'] == false){
+        header( 'Location: dashboard.php' );
+      }
     }
   }
 ?>
