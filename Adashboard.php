@@ -133,7 +133,9 @@
 													<option disabled selected name='username'>
 														Users
 													</option>
-														populateAdmin()
+														<?php
+														populateAdmin();
+														?>
 												</select>
 										</div>
 									</div>
