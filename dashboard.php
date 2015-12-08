@@ -168,6 +168,16 @@
 			<div>
 			</div>
 		</div>
+		<script>
+			$(document).ready(function (){
+				$('#adminEdit').onClick(function (){
+					$('#adminEditMenu').toggle(slide);
+				});
+				$('#userDel').onClick(function (){
+					$('#DeleteMenu').toggle(slide);
+				});
+			});
+		</script>
 		<div class="container">
 			<div class="row">
 				<script src="//d3js.org/d3.v3.min.js"></script>
