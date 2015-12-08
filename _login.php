@@ -1,6 +1,7 @@
 <?php
   session_start();
   $mIsValidUser = false;
+  var_dump($_POST);
   if($_POST["username"]!= null && $_POST["password"]!= null){
 
     //If there is a unsername varible in the post array then put it into the session
@@ -25,7 +26,7 @@
   $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
   // Check to see if the query fails
   if(!mysql_query($sql, $database)){
-    var_dump($session);
+    var_dump($_SESSION);
     echo "<p>Query Failed!</p>";
   }
 
