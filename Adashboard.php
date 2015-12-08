@@ -126,7 +126,7 @@
 								<br />
 							<div class='container' class="hide" id='adminEditMenu'>
 								<div class='row'>
-								<div class='form-horizontal' method='post' action='_updateUser.php'>
+								<form class='form-horizontal' method='post' action='_updateUser.php'>
 									<div class='form-group'>
 										<div class='well' id='well2' style='overflow: auto;'>
 												<select class='form-control'>
@@ -140,12 +140,12 @@
 										</div>
 									</div>
 										<input class='btn btn-primary col-sm-offset-6' type='submit' value= 'Submit Changes'>
-								</div>
+								</form>
 							</div>
 						</div>
 						<div class='container' class="hide" id='DeleteMenu'>
 							<div class='row'>
-							<div class='form-horizontal' method='post' action='_deleteUser.php'>
+							<form class='form-horizontal' method='post' action='_deleteUser.php'>
 								<div class='form-group'>
 									<div class='well' id='well2' style='overflow: auto;'>
 											<select class='form-control'>
@@ -159,7 +159,7 @@
 									</div>
 								</div>
 									<input class='btn btn-primary col-sm-offset-6' type='submit' value= 'Delete User'>
-							</div>
+							</form>
 						</div>
 					</div>
 	    </div>
