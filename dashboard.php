@@ -246,43 +246,45 @@ function populateAdmin() {
 	            populateEvent();
 	          ?>
 	        </select>
-			<div class="row">
-				<a class="btn btn-primary" href="ticketAdder.php" style="!text-decoration: none;">Add Ticket</a>
-				<button class="btn btn-primary" style="!text-decoration: none;">Event Data</button>
-				<a class="btn btn-primary" href="priceAdder.php"style="!text-decoration: none;">Add Price</a>
-				<?php
-					if($_SESSION['admin'] == true){
-						echo "<a class='btn btn-primary'href='eventAdder.php' style='text-decoration: none;''>Add Event</a>
-									<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>
-									<a class='btn btn-primary' href='priceAdder.php'style='!text-decoration: none;'>Add Price</a>
-						 			</div>
-										<div class='container' id='adminMenu'>
-											<div class='row'>
-												<div class='col-md-3'>
-							            <div class='well' id='well2' style='overflow: auto;'>
-							                <select class='form-control'>
-																<option disabled selected>
-											            Users
-											          </option>
-											          <?php
-											            populateAdmin();
-											          ?>
-															</select>
-							            </div>
+			<br />
+			<div class="container">	
+				<div class="row">
+					<a class="btn btn-primary" href="ticketAdder.php" style="!text-decoration: none;">Add Ticket</a>
+					<button class="btn btn-primary" style="!text-decoration: none;">Event Data</button>
+					<?php
+						if($_SESSION['admin'] == true){
+							echo "<a class='btn btn-primary'href='eventAdder.php' style='text-decoration: none;''>Add Event</a>
+										<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>
+										<a class='btn btn-primary' href='priceAdder.php'style='!text-decoration: none;'>Add Price</a>
+							 			</div>
+											<div class='container' id='adminMenu'>
+												<div class='row'>
+													<div class='col-md-3'>
+								            <div class='well' id='well2' style='overflow: auto;'>
+								                <select class='form-control'>
+																	<option disabled selected>
+												            Users
+												          </option>
+												          <?php
+												            populateAdmin();
+												          ?>
+																</select>
+								            </div>
+												</div>
+							        </div>
 											</div>
-						        </div>
-										</div>
-									<!--	<script>
-										$(document).ready(function() {
-												 $('#adminEdit').click(function() {
-															$('#adminMenu').toggle('slide');
-												 });
-										 });
-									 </script>-->";
-		 			}
-			 ?>
-      </div>
-    </div>
+										<!--	<script>
+											$(document).ready(function() {
+													 $('#adminEdit').click(function() {
+																$('#adminMenu').toggle('slide');
+													 });
+											 });
+										 </script>-->";
+			 			}
+				 ?>
+	      </div>
+	    </div>
+		</div>
   </body>
   <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
