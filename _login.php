@@ -25,7 +25,7 @@
   //session_start(); <--- You need this if the session has not yet been started
   $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
   // Check to see if the query fails
-  if(!mysql_query($sql, $database)){
+  if(!mysql_query($sql)){
     var_dump($_SESSION);
     echo "<p>Query Failed!</p>";
   }
