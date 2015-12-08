@@ -252,9 +252,10 @@ function populateAdmin() {
 				<a class="btn btn-primary" href="priceAdder.php"style="!text-decoration: none;">Add Price</a>
 				<?php
 					if($_SESSION['admin'] == true){
-						echo "<a class='btn btn-primary'href='eventAdder.php' style='text-decoration: none;''>Add Event</a>";
-						echo "<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>";
-						echo "</div>
+						echo "<a class='btn btn-primary'href='eventAdder.php' style='text-decoration: none;''>Add Event</a>
+									<button class='btn btn-primary' id='adminEdit'>Edit Admins</button>
+									<a class='btn btn-primary' href='priceAdder.php'style='!text-decoration: none;'>Add Price</a>
+						 			</div>
 										<div class='container' id='adminMenu'>
 											<div class='row'>
 												<div class='col-md-3'>
