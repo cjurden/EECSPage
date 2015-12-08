@@ -31,7 +31,7 @@
 
   //this may be only for the login page, not signup, must pass a variable that shows where you are originating from
   //session_start(); <--- You need this if the session has not yet been started
-  $sql = "SELECT USERNAME FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
+  $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
   // Check to see if the query fails
   $result = mysql_query($sql);
   if(!$result){
@@ -45,6 +45,13 @@
     header( 'Location: login.php' );
   }
   else if ($result){
+    	if(mysql_result($result, 0, "ADMIN")=="1")
+    	{
+    		$_SESSION['admin'] = true;
+    	}
+    	else{
+    		$_SESSION['admin'] = false;
+    	}
     header( 'Location: dashboard.php');
   }
  ?>

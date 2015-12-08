@@ -63,6 +63,7 @@
     	if($add){
     		$_SESSION['username'] = $username;
     		$_SESSION['password'] = $password;
+            $_SESSION['admin']    = $admin;
     		echo "<p>inserted data</p>";
     		$variables = [$firstname,
     									$lastname,
