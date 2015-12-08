@@ -81,7 +81,7 @@
       </div>
     </nav>
     <div class="container">
-    <form class="form-horizontal" action="dashboard.php" method="post">
+    <form class="form-horizontal" action="_seatAdder.php" method="post">
       <div class="form-group">
         <label for="events">Select an Event:</label>
         <select class="form-control" name="event">
