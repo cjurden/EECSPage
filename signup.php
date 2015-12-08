@@ -27,7 +27,7 @@ foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html")
     <div class="page-header col-sm-offset-1 col-sm-10">
       <h1>Sign Up For TicketMiner</h1>
     </div>
-    <form class="form-horizontal" action="_signup.php" method="post">
+    <form class="form-horizontal" action="Psignup.php" method="post">
       <div class="form-group">
         <label for="firstName" class="col-sm-2 control-label">FirstName</label>
         <div class="col-sm-9">
