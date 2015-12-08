@@ -224,7 +224,7 @@ if($_POST['ticket'] == null || $_POST['file'] == null) {
 	$array = mysql_query($quer);
 	$arr = mysql_fetch_array($array);
 	var_dump($arr);
-	write_tabbed_file('prices.tsv', $arr, $save_keys, true);
+	write_tabbed_file('prices.tsv', $arr, true);
 }
 
 
