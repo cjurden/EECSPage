@@ -9,12 +9,12 @@
   include ROOT_PATH.'/public_html/base.php';
 
   function populateTicket(){
-    $sql = "SELECT * FROM TICKET";
+    $sql = "SELECT E.NAME, S.SECTION, S.ROW, S.SEATNO FROM TICKET AS T, RSEAT AS S, EVENT AS E WHERE T.SID = R.SID AND E.EID = T.EID";
     $result = mysql_query($sql);
     var_dump($result);
 
     while($row = mysql_fetch_array($result)){
-      echo "<option>".$row['NAME']."</option>";
+      echo "<option>Event: ".$row['NAME']." | Section: ".$row['SECTION']." | Row: ".$row['ROW']." | Seat: ".$row['SEATNO']."</option>";
     }
   }
 ?>
@@ -38,7 +38,7 @@
     <div class="container">
       <form class="form-horizontal" action="dashboard.php" method="post">
         <div class="form-group">
-          <label for="events">Select an Event:</label>
+          <label for="events">Select a Ticket:</label>
           <select class="form-control" name="ticket">
             <option disabled>
               Tickets
