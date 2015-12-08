@@ -27,28 +27,39 @@
     }else{
       $sid = mysql_query("SELECT SID FROM RSEAT WHERE ROW = '".$_POST["row"]."' AND SECTION = '".$_POST["section"]."' AND SEATNO = '".$_POST["seat"]."' GROUP BY SID");
     	$eid = mysql_query("SELECT EID FROM EVENT WHERE NAME = '".$_POST['event']."' GROUP BY EID");
-
-    	$insertTicket = "INSERT INTO TICKET (EID, SID) VALUES ('".$eid."','".$sid."')"; //insert query to get post variables from add ticket and activate the ticket
-      $R1 = mysql_query($insertTicket);
-    	if(!$R1){
-    		echo "<p>
-    		 insert into ticket failed
-    		</p>";
-    	}
-      $activateSeat = "INSERT INTO SEAT (SID) VALUES('".$sid."')";
-      $R2 = mysql_query($activateSeat);
-    	if(!$R2){
-    		echo "<p>
-    		 insert into seat table failed
-    		</p>";
-    	}
-    }
-    if($R2 && $R1){
-      if($_SESSION['admin'] == true){
-        header( 'Location: Adashboard.php' );
-      } else if($_SESSION['admin'] == false){
-        header( 'Location: dashboard.php' );
+      //check for duplicate values
+      $check = "SELECT * FROM TICKET WHERE EID = '".$eid."' AND VID = '".$vid."'";
+      $checker = mysql_query($check);
+      if($checker && mysql_num_rows($result) == 0){
+        // If there are no rows with this username and password combination then redirect the user
+        $insertTicket = "INSERT INTO TICKET (EID, SID) VALUES ('".$eid."','".$sid."')"; //insert query to get post variables from add ticket and activate the ticket
+        $R1 = mysql_query($insertTicket);
+      	if(!$R1){
+      		echo "<p>
+      		 insert into ticket failed
+      		</p>";
+      	}
+        $activateSeat = "INSERT INTO SEAT (SID) VALUES('".$sid."')";
+        $R2 = mysql_query($activateSeat);
+      	if(!$R2){
+      		echo "<p>
+      		 insert into seat table failed
+      		</p>";
+      	}
       }
-    }
+      if($R2 && $R1){
+        if($_SESSION['admin'] == true){
+          header( 'Location: Adashboard.php' );
+        } else if($_SESSION['admin'] == false){
+          header( 'Location: dashboard.php' );
+        }
+      }
+      else if($checker && mysql_num_rows($result) > 0) {
+        if($_SESSION['admin'] == true){
+          header( 'Location: Adashboard.php' );
+        } else if($_SESSION['admin'] == false){
+          header( 'Location: dashboard.php' );
+        }
+      }
   }
 ?>
