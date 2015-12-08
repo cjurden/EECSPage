@@ -386,7 +386,7 @@ function populateAdmin() {
 				  .append("g")
 				    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-				d3.tsv("prices.tsv", function(error, data) {
+				d3.csv("PRICEDATA.csv", function(error, data) {
 				  if (error) throw error;
 
 				  data.forEach(function(d) {
