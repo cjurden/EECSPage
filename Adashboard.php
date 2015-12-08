@@ -68,6 +68,9 @@
 			  stroke: steelblue;
 			  stroke-width: 1.5px;
 			}
+			.hide {
+				display:none;
+			}
 		</style>
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -99,8 +102,6 @@
 			<br />
 			<script>
 				$(document).ready(function (){
-					$('#adminEditMenu').hide();
-					$('#DeleteMenu').hide();
 					$('#adminEdit').click(function (){
 						$('#adminEditMenu').toggle("slide");
 					});
@@ -119,7 +120,7 @@
 											<button class='btn btn-primary' id='userDel'>Delete User</button>
 								</div>
 								<br />
-							<div class='container' id='adminEditMenu'>
+							<div class='container' class="hide"id='adminEditMenu'>
 								<div class='row'>
 								<div class='form-horizontal' method='post' action='_updateUser.php'>
 									<div class='form-group'>
@@ -138,7 +139,7 @@
 								</div>
 							</div>
 						</div>
-						<div class='container' id='DeleteMenu'>
+						<div class='container' class="hide" id='DeleteMenu'>
 							<div class='row'>
 							<div class='form-horizontal' method='post' action='_deleteUser.php'>
 								<div class='form-group'>
