@@ -105,9 +105,11 @@
 					$('#adminEditMenu').hide();
 					$('#DeleteMenu').hide();
 					$('#adminEdit').click(function (){
+						$('#DeleteMenu').hide();
 						$('#adminEditMenu').toggle("slide");
 					});
 					$('#userDel').click(function (){
+						$('#adminEditMenu').hide();
 						$('#DeleteMenu').toggle("slide");
 					});
 				});
