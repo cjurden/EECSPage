@@ -25,6 +25,7 @@
   $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
   // Check to see if the query fails
   if(!mysql_query($sql, $database)){
+    var_dump($session);
     echo "<p>Query Failed!</p>";
   }
 
