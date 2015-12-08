@@ -1,5 +1,13 @@
 <?php
     session_start();
+    $mRootpath = "";
+    $mFilepath = explode('/',dirname(__DIR__));
+    foreach($mFilepath as $f){$mRootpath = $mRootpath.$f."/";if($f == "public_html"){break;}
+    }
+    define('ROOT_PATH', $mRootpath);
+
+    include ROOT_PATH.'public_html/base.php';
+
     if($_POST["firstName"] == null || $_POST["lastName"] == null || $_POST["username"] == null || $_POST["password"] == null || $_POST["inputEmail"] == null){
       session_destroy();
       header( 'Location: signup.php');
