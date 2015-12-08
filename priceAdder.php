@@ -6,7 +6,7 @@
   }
   define('ROOT_PATH', $mRootpath);
 
-  include ROOT_PATH.'public_html/base.php';
+  include ROOT_PATH.'/public_html/base.php';
 
   function populateTicket(){
     $sql = "SELECT * FROM TICKET";

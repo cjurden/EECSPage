@@ -179,12 +179,14 @@ if($_POST['name'] == null || $_POST['type'] == null || $_POST['date'] == null ||
 	}
 }
 
+//coming from price adder
 if($_POST['ticket'] == null || $_POST['file'] == null) {
 	//do something
 	echo "<p>not coming from price adder!</p>";
 }else{
 	$TIDquer = "SELECT TID FROM TICKET WHERE NAME = '".$_POST['name']."'";
 	$tid = mysql_query($VIDquer, $database);
+	var_dump($tid);
 	$file = fopen($_POST['file'], "r");
 	while(! feof($file))
 	{
@@ -206,10 +208,10 @@ function populateEvent(){
 }
 
 function populateAdmin() {
-	$quer = "SELECT * FROM USERS WHERE ADMIN = 1";
+	$quer = "SELECT * FROM USERS";
 	$res = mysql_query($quer);
 
-	while($row = mysql_fetch_array($result)){
+	while($row = mysql_fetch_array($res)){
 		if($row['ADMIN'] == 0){
 			echo "<option>".$row['FIRSTNAME']." ".$row['LASTNAME']." ".$row['ADMIN']."</option>";
 		}
