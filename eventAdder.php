@@ -7,6 +7,20 @@
 
   include ROOT_PATH.'/public_html/base.php';
 
+  $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'AND ADMIN = '".$_SESSION['admin']."'";
+  // Check to see if the query fails
+  $result = mysql_query($sql);
+  if(!$result){
+    var_dump($_SESSION);
+    echo "<p>Query Failed!</p>";
+  }
+
+  if($result && mysql_num_rows($result) == 0){
+    // If there are no rows with this username and password combination then redirect the user
+    session_destroy();
+    header( 'Location: login.php' );
+  }
+  
   $sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'";
   // Check to see if the query fails
   if(!mysql_query($sql, $database)){

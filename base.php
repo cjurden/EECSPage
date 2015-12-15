@@ -32,20 +32,6 @@ if(!mysql_select_db($userName, $database)){
 	die('Could not select database: ' . mysql_error());
 }
 
-$sql = "SELECT * FROM USERS WHERE USERNAME='".$_SESSION['username']."' AND PASSWORD='".$_SESSION['password']."'AND ADMIN = '".$_SESSION['admin']."'";
-// Check to see if the query fails
-$result = mysql_query($sql);
-if(!$result){
-	var_dump($_SESSION);
-	echo "<p>Query Failed!</p>";
-}
-
-if($result && mysql_num_rows($result) == 0){
-	// If there are no rows with this username and password combination then redirect the user
-	session_destroy();
-	header( 'Location: login.php' );
-}
-
 /* ---------------------------------------------------------*/
 /* -- PHP "INCLUDE" STATEMENTS								*/
 /* -- ------------------------------------------------------*/
